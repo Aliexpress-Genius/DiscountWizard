@@ -8,7 +8,11 @@ This project is dedicated to helping shoppers save money on AliExpress by provid
 ## 🚀 What You Can Do
 - **Explore**: Discover the latest AliExpress promo codes and discounts.
 - **Save**: Learn how to apply these codes for maximum savings.
-- **Share**: Contribute your own finds and tips to help others save even more!
+- **Copy with Ease**: Simply click on any promo code to copy it to your clipboard for easy use!
+- **Join Our Community**: Connect with other shoppers and share your best finds.
+
+## 🤖 Telegram Bot
+We also have a Telegram bot that helps you reduce prices on AliExpress, sometimes by as much as 15-60%! Join our channel to get notified about the best deals available.
 
 ## 🛠️ How to Use
 1. **Check for Updates**: Regularly visit this repository for the latest promo codes.
