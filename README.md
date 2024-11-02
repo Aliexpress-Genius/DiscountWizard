@@ -12,7 +12,7 @@ This project is dedicated to helping shoppers save money on AliExpress by provid
 - **Join Our Community**: Connect with other shoppers and share your best finds.
 
 ## 🤖 Telegram Bot
-We also have a Telegram bot that helps you reduce prices on AliExpress, sometimes by as much as 15-60%! Join our channel to get notified about the best deals available.
+We also have a Telegram bot https://t.me/CoinCutterBot that helps you reduce prices on AliExpress, sometimes by as much as 15-60%! Join our channel to get notified about the best deals available.
 
 ## 🛠️ How to Use
 1. **Check for Updates**: Regularly visit this repository for the latest promo codes.
