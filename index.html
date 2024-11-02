@@ -54,29 +54,47 @@
         .copy-button:hover {
             background: #0056b3;
         }
+        .alert {
+            margin-top: 10px;
+            color: #28a745; /* Success color */
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <h1>Códigos de Cupón</h1>
     <div class="coupon-container">
         <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('CUPON123')">CUPON123</span>
-            <button class="copy-button" onclick="copyToClipboard('CUPON123')">Copiar</button>
+            <span class="coupon-code" onclick="copyToClipboard('CUPON123', this)">CUPON123</span>
+            <button class="copy-button" onclick="copyToClipboard('CUPON123', this)">Copiar</button>
         </div>
+        <div class="alert" id="alert-CUPON123" style="display:none;"></div>
+        
         <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('DESCUENTO456')">DESCUENTO456</span>
-            <button class="copy-button" onclick="copyToClipboard('DESCUENTO456')">Copiar</button>
+            <span class="coupon-code" onclick="copyToClipboard('DESCUENTO456', this)">DESCUENTO456</span>
+            <button class="copy-button" onclick="copyToClipboard('DESCUENTO456', this)">Copiar</button>
         </div>
+        <div class="alert" id="alert-DESCUENTO456" style="display:none;"></div>
+        
         <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('AHORRA789')">AHORRA789</span>
-            <button class="copy-button" onclick="copyToClipboard('AHORRA789')">Copiar</button>
+            <span class="coupon-code" onclick="copyToClipboard('AHORRA789', this)">AHORRA789</span>
+            <button class="copy-button" onclick="copyToClipboard('AHORRA789', this)">Copiar</button>
         </div>
+        <div class="alert" id="alert-AHORRA789" style="display:none;"></div>
     </div>
 
     <script>
-        function copyToClipboard(code) {
+        function copyToClipboard(code, element) {
             navigator.clipboard.writeText(code).then(() => {
-                alert('Código copiado: ' + code);
+                const alertId = 'alert-' + code;
+                const alertElement = document.getElementById(alertId);
+                alertElement.innerText = 'Código copiado: ' + code;
+                alertElement.style.display = 'block';
+                
+                // Hide the alert after 2 seconds
+                setTimeout(() => {
+                    alertElement.style.display = 'none';
+                }, 2000);
             }).catch(err => {
                 console.error('Error al copiar el código: ', err);
             });
