@@ -23,7 +23,7 @@ We also have a Telegram bot https://t.me/CoinCutterBot that helps you reduce pri
 We welcome contributions! If you have a promo code or tip to share, please submit a pull request. Let’s help each other save!
 
 ## 📫 Contact
-For questions or suggestions, feel free to reach out to me at [your email] or open an issue in this repository.
+For questions or suggestions, feel free to reach out to me at https://t.me/valkyrie_valkyrie or open an issue in this repository.
 
 Happy shopping and saving! 🛍️✨
 
