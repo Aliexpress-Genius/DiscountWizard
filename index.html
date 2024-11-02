@@ -6,16 +6,18 @@
     <title>Códigos de Cupón de AliExpress</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
-        }
-        h1 {
-            text-align: center;
             color: #333;
+        }
+        h2 {
+            text-align: center;
+            color: #007bff;
             font-size: 2.5em;
             margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
         .subtitle {
             text-align: center;
@@ -30,6 +32,7 @@
             border-radius: 8px;
             text-align: center;
             margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .coupon-container {
             max-width: 600px;
@@ -41,24 +44,24 @@
         }
         .coupon {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
+            flex-direction: column; /* Stack items vertically */
+            padding: 15px;
             margin: 10px 0;
             border: 1px solid #ddd;
             border-radius: 5px;
             background: #f9f9f9;
             transition: background 0.3s;
+            position: relative; /* For positioning the alert */
         }
         .coupon:hover {
             background: #e9e9e9;
         }
         .coupon-code {
-            font-size: 1.2em;
+            font-size: 1.5em;
             color: #007bff;
             cursor: pointer;
             font-weight: bold;
-            flex: 1; /* Allow it to grow */
+            margin-bottom: 10px; /* Space below code */
         }
         .copy-button {
             padding: 10px 15px;
@@ -68,7 +71,8 @@
             color: white;
             cursor: pointer;
             transition: background 0.3s;
-            margin-left: 10px; /* Space between code and button */
+            text-align: center;
+            font-size: 1em;
         }
         .copy-button:hover {
             background: #0056b3;
@@ -78,6 +82,10 @@
             color: #28a745; /* Success color */
             font-weight: bold;
             display: none;
+            position: absolute; /* Position relative to coupon */
+            bottom: 10px;
+            left: 15px;
+            font-size: 0.9em; /* Smaller font size */
         }
         .note {
             text-align: center;
@@ -89,6 +97,8 @@
             margin: 20px 0;
             font-weight: bold;
             font-size: 1.3em;
+            color: #ff5722; /* Highlight category color */
+            text-align: center; /* Center the category */
         }
         .image-placeholder {
             width: 100%;
@@ -116,9 +126,9 @@
     <div class="coupon-container">
         <div class="discount-category">💥 $2 de descuento en compras superiores a $20</div>
         <div class="coupon">
-        <span class="coupon-code" onclick="copyToClipboard('IFPWW2I', this)">IFPWW2I</span>
+            <span class="coupon-code" onclick="copyToClipboard('IFPWW2I', this)">IFPWW2I</span>
             <button class="copy-button" onclick="copyToClipboard('IFPWW2I', this)">Copiar</button>
-            <span class="alert" id="alert-IFPWW2I" style="display: none;">Código copiado: IFPWW2I</span>
+            <span class="alert" id="alert-IFPWW2I">Código copiado: IFPWW2I</span>
         </div>
         <div class="coupon">
             <span class="coupon-code" onclick="copyToClipboard('IFPXF37', this)">IFPXF37</span>
@@ -170,105 +180,25 @@
             <span class="alert" id="alert-IFPAIT9">Código copiado: IFPAIT9</span>
         </div>
         <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPJIZA', this)">IFPJIZA</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPJIZA', this)">Copiar</button>
-            <span class="alert" id="alert-IFPJIZA">Código copiado: IFPJIZA</span>
+            <span class="coupon-code" onclick="copyToClipboard('IFPZOWG', this)">IFPZOWG</span>
+            <button class="copy-button" onclick="copyToClipboard('IFPZOWG', this)">Copiar</button>
+            <span class="alert" id="alert-IFPZOWG">Código copiado: IFPZOWG</span>
         </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFP7SV2', this)">IFP7SV2</span>
-            <button class="copy-button" onclick="copyToClipboard('IFP7SV2', this)">Copiar</button>
-            <span class="alert" id="alert-IFP7SV2">Código copiado: IFP7SV2</span>
-        </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPOBRR', this)">IFPOBRR</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPOBRR', this)">Copiar</button>
-            <span class="alert" id="alert-IFPOBRR">Código copiado: IFPOBRR</span>
-        </div>
-
-        <div class="discount-category">💥 $6 de descuento en compras superiores a $48</div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPDZ3A', this)">IFPDZ3A</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPDZ3A', this)">Copiar</button>
-            <span class="alert" id="alert-IFPDZ3A">Código copiado: IFPDZ3A</span>
-        </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPSGSV', this)">IFPSGSV</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPSGSV', this)">Copiar</button>
-            <span class="alert" id="alert-IFPSGSV">Código copiado: IFPSGSV</span>
-        </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPF8QK', this)">IFPF8QK</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPF8QK', this)">Copiar</button>
-            <span class="alert" id="alert-IFPF8QK">Código copiado: IFPF8QK</span>
-        </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPZVRG', this)">IFPZVRG</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPZVRG', this)">Copiar</button>
-            <span class="alert" id="alert-IFPZVRG">Código copiado: IFPZVRG</span>
-        </div>
-
-        <div class="discount-category">💥 $30 de descuento en compras superiores a $269</div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPIOI5', this)">IFPIOI5</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPIOI5', this)">Copiar</button>
-            <span class="alert" id="alert-IFPIOI5">Código copiado: IFPIOI5</span>
-        </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFP0MWP', this)">IFP0MWP</span>
-            <button class="copy-button" onclick="copyToClipboard('IFP0MWP', this)">Copiar</button>
-            <span class="alert" id="alert-IFP0MWP">Código copiado: IFP0MWP</span>
-        </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPYSVF', this)">IFPYSVF</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPYSVF', this)">Copiar</button>
-            <span class="alert" id="alert-IFPYSVF">Código copiado: IFPYSVF</span>
-        </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPNX4Y', this)">IFPNX4Y</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPNX4Y', this)">Copiar</button>
-            <span class="alert" id="alert-IFPNX4Y">Código copiado: IFPNX4Y</span>
-        </div>
-
-        <div class="discount-category">💥 $40 de descuento en compras superiores a $419</div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPJO2P', this)">IFPJO2P</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPJO2P', this)">Copiar</button>
-            <span class="alert" id="alert-IFPJO2P">Código copiado: IFPJO2P</span>
-        </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPOKEN', this)">IFPOKEN</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPOKEN', this)">Copiar</button>
-            <span class="alert" id="alert-IFPOKEN">Código copiado: IFPOKEN</span>
-        </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPKXIY', this)">IFPKXIY</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPKXIY', this)">Copiar</button>
-            <span class="alert" id="alert-IFPKXIY">Código copiado: IFPKXIY</span>
-        </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPZ8DL', this)">IFPZ8DL</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPZ8DL', this)">Copiar</button>
-            <span class="alert" id="alert-IFPZ8DL">Código copiado: IFPZ8DL</span>
-        </div>
-
-        <div class="note">🔗 Únete a nuestro canal de Telegram para más ofertas exclusivas: <a href="https://t.me/AliOfertasES" target="_blank">AliOfertasES</a></div>
     </div>
 
     <script>
-        function copyToClipboard(code, element) {
-            navigator.clipboard.writeText(code).then(() => {
-                const alertId = 'alert-' + code;
-                const alertElement = document.getElementById(alertId);
-                alertElement.innerText = 'Código copiado: ' + code;
-                alertElement.style.display = 'block';
-                
-                // Hide the alert after 2 seconds
-                setTimeout(() => {
-                    alertElement.style.display = 'none';
-                }, 1000);
-            }).catch(err => {
-                console.error('Error al copiar el código: ', err);
-            });
+        function copyToClipboard(code, button) {
+            const el = document.createElement('textarea');
+            el.value = code;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            const alertElement = button.nextElementSibling;
+            alertElement.style.display = 'block';
+            setTimeout(() => {
+                alertElement.style.display = 'none';
+            }, 1000);
         }
     </script>
 </body>
