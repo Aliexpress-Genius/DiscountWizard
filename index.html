@@ -141,8 +141,10 @@
 
         function changeButtonColor(button) {
             button.style.backgroundColor = '#28a745'; // أخضر
+            button.textContent = 'تم النسخ!'; // تغيير النص
             setTimeout(() => {
-                button.style.backgroundColor = '#007bff'; // اللون الأصلي
+                button.style.backgroundColor = '#007bff'; // العودة إلى اللون الأصلي
+                button.textContent = 'Copiar'; // إعادة النص الأصلي
             }, 1000); // العودة بعد ثانية واحدة
         }
     </script>
