@@ -44,14 +44,14 @@
         }
         .coupon {
             display: flex;
-            flex-direction: column; /* Stack items vertically */
+            flex-direction: column;
             padding: 15px;
             margin: 10px 0;
             border: 1px solid #ddd;
             border-radius: 5px;
             background: #f9f9f9;
             transition: background 0.3s;
-            position: relative; /* For positioning the alert */
+            position: relative;
         }
         .coupon:hover {
             background: #e9e9e9;
@@ -61,7 +61,7 @@
             color: #007bff;
             cursor: pointer;
             font-weight: bold;
-            margin-bottom: 10px; /* Space below code */
+            margin-bottom: 10px;
         }
         .copy-button {
             padding: 10px 15px;
@@ -79,17 +79,17 @@
         }
         .alert {
             margin-top: 10px;
-            color: #28a745; /* Success color */
+            color: #28a745;
             font-weight: bold;
             display: none;
-            position: absolute; /* Position relative to coupon */
+            position: absolute;
             bottom: 10px;
             left: 15px;
-            font-size: 0.9em; /* Smaller font size */
+            font-size: 0.9em;
         }
         .note {
             text-align: center;
-            color: #ff5722; /* Important notice color */
+            color: #ff5722;
             font-size: 1.1em;
             margin: 20px 0;
         }
@@ -97,18 +97,8 @@
             margin: 20px 0;
             font-weight: bold;
             font-size: 1.3em;
-            color: #ff5722; /* Highlight category color */
-            text-align: center; /* Center the category */
-        }
-        .image-placeholder {
-            width: 100%;
-            height: auto;
-            margin: 20px 0;
-            background: #e0e0e0;
+            color: #ff5722;
             text-align: center;
-            line-height: 200px;
-            font-size: 1.5em;
-            color: #999;
         }
     </style>
 </head>
@@ -130,60 +120,7 @@
             <button class="copy-button" onclick="copyToClipboard('IFPWW2I', this)">Copiar</button>
             <span class="alert" id="alert-IFPWW2I">Código copiado: IFPWW2I</span>
         </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPXF37', this)">IFPXF37</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPXF37', this)">Copiar</button>
-            <span class="alert" id="alert-IFPXF37">Código copiado: IFPXF37</span>
-        </div>
-
-        <div class="discount-category">💥 $5 de descuento en compras superiores a $50</div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPHSAY', this)">IFPHSAY</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPHSAY', this)">Copiar</button>
-            <span class="alert" id="alert-IFPHSAY">Código copiado: IFPHSAY</span>
-        </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFP5DTG', this)">IFP5DTG</span>
-            <button class="copy-button" onclick="copyToClipboard('IFP5DTG', this)">Copiar</button>
-            <span class="alert" id="alert-IFP5DTG">Código copiado: IFP5DTG</span>
-        </div>
-
-        <div class="discount-category">💥 $25 de descuento en compras superiores a $200</div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFP8GOD', this)">IFP8GOD</span>
-            <button class="copy-button" onclick="copyToClipboard('IFP8GOD', this)">Copiar</button>
-            <span class="alert" id="alert-IFP8GOD">Código copiado: IFP8GOD</span>
-        </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPBIGE', this)">IFPBIGE</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPBIGE', this)">Copiar</button>
-            <span class="alert" id="alert-IFPBIGE">Código copiado: IFPBIGE</span>
-        </div>
-
-        <div class="discount-category">💥 $50 de descuento en compras superiores a $400</div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPRDEJ', this)">IFPRDEJ</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPRDEJ', this)">Copiar</button>
-            <span class="alert" id="alert-IFPRDEJ">Código copiado: IFPRDEJ</span>
-        </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPAYCJ', this)">IFPAYCJ</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPAYCJ', this)">Copiar</button>
-            <span class="alert" id="alert-IFPAYCJ">Código copiado: IFPAYCJ</span>
-        </div>
-
-        <div class="discount-category">👀 Descubre los más vendidos en AliExpress!</div>
-        <div class="discount-category">💥 $3 de descuento en compras superiores a $24</div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPAIT9', this)">IFPAIT9</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPAIT9', this)">Copiar</button>
-            <span class="alert" id="alert-IFPAIT9">Código copiado: IFPAIT9</span>
-        </div>
-        <div class="coupon">
-            <span class="coupon-code" onclick="copyToClipboard('IFPZOWG', this)">IFPZOWG</span>
-            <button class="copy-button" onclick="copyToClipboard('IFPZOWG', this)">Copiar</button>
-            <span class="alert" id="alert-IFPZOWG">Código copiado: IFPZOWG</span>
-        </div>
+        <!-- المزيد من الكوبونات -->
     </div>
 
     <script>
@@ -199,6 +136,14 @@
             setTimeout(() => {
                 alertElement.style.display = 'none';
             }, 1000);
+            changeButtonColor(button);
+        }
+
+        function changeButtonColor(button) {
+            button.style.backgroundColor = '#28a745'; // أخضر
+            setTimeout(() => {
+                button.style.backgroundColor = '#007bff'; // اللون الأصلي
+            }, 1000); // العودة بعد ثانية واحدة
         }
     </script>
 </body>
