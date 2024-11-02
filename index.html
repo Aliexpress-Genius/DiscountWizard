@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Códigos de Cupón de AliExpress</title>
-    <meta name="description" content="Descubre códigos de cupón para AliExpress y aprovecha grandes descuentos en tus compras.">
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
-            line-height: 1.6;
         }
         h1 {
             text-align: center;
@@ -43,8 +41,8 @@
         }
         .coupon {
             display: flex;
-            flex-direction: column; /* Change for better mobile display */
-            align-items: center; /* Center items */
+            justify-content: space-between;
+            align-items: center;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ddd;
@@ -56,11 +54,11 @@
             background: #e9e9e9;
         }
         .coupon-code {
-            font-size: 1.5em; /* Slightly larger for better readability */
+            font-size: 1.2em;
             color: #007bff;
             cursor: pointer;
             font-weight: bold;
-            margin-bottom: 10px; /* Space between code and button */
+            flex: 1; /* Allow it to grow */
         }
         .copy-button {
             padding: 10px 15px;
@@ -70,6 +68,7 @@
             color: white;
             cursor: pointer;
             transition: background 0.3s;
+            margin-left: 10px; /* Space between code and button */
         }
         .copy-button:hover {
             background: #0056b3;
@@ -100,14 +99,6 @@
             line-height: 200px;
             font-size: 1.5em;
             color: #999;
-        }
-
-        @media (min-width: 600px) {
-            .coupon {
-                flex-direction: row; /* Row layout for larger screens */
-                justify-content: space-between;
-                align-items: center;
-            }
         }
     </style>
 </head>
@@ -259,9 +250,9 @@
             <button class="copy-button" onclick="copyToClipboard('IFPZ8DL', this)">Copiar</button>
             <span class="alert" id="alert-IFPZ8DL">Código copiado: IFPZ8DL</span>
         </div>
-    </div>
 
-    <div class="note">🔗 Únete a nuestro canal de Telegram para más ofertas exclusivas: <a href="https://t.me/AliOfertasES" target="_blank">AliOfertasES</a></div>
+        <div class="note">🔗 Únete a nuestro canal de Telegram para más ofertas exclusivas: <a href="https://t.me/AliOfertasES" target="_blank">AliOfertasES</a></div>
+    </div>
 
     <script>
         function copyToClipboard(code, element) {
