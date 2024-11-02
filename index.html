@@ -45,9 +45,17 @@
         }
         .coupon {
             display: flex;
-            justify-content: space-between; /* Align items to the sides */
-            align-items: center; /* Center vertically */
+            justify-content: space-between; /* محاذاة العناصر إلى الجانبين */
+            align-items: center; /* التوسيط عموديًا */
+            padding: 15px; /* يمكن الاحتفاظ بنفس الحشو كما في السابق */
+            margin: 10px 0; /* الحفاظ على المساحة بين الكوبونات */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+            transition: background 0.3s;
+            position: relative;
         }
+
 
         .coupon:hover {
             background: #e9e9e9;
