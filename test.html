@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Códigos de Cupón de AliExpress</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: sans-serif;
@@ -20,6 +21,47 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Banner Styles */
+        .hero-banner {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .hero-banner h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero-banner p {
+            font-size: 1.2em;
+        }
+
+        /* Search Bar Styles */
+        .search-bar {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-bar button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
         }
 
         h1 {
@@ -50,7 +92,14 @@
             justify-content: space-between;
             align-items: center;
             border: 1px solid #ddd;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition */
         }
+
+        .coupon-card:hover {
+            transform: translateY(-3px); /* Slight lift effect */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+        }
+
 
         .coupon-description {
             color: #555;
@@ -72,6 +121,9 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+             display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .copy-button:hover {
@@ -148,13 +200,65 @@
         .copy-button.copied + .copied-message {
             display: inline;
         }
+
+        /* Countdown Timer Styles */
+        .countdown-timer {
+            font-size: 0.8em;
+            color: #777;
+        }
+        /* Star Rating Styles */
+        .star-rating {
+            font-size: 1.2em;
+            color: #f39c12; /* Golden color for stars */
+        }
+
+        .star-rating .fa-star {
+            margin: 0 2px;
+        }
+
+        /* Social Sharing Button Styles */
+        .social-share-buttons {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 10px;
+        }
+
+        .social-share-buttons a {
+            background-color: #3b5998; /* Facebook blue */
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-share-buttons a:hover {
+            background-color: #2d4373; /* Darker blue on hover */
+        }
+
+        .social-share-buttons a i {
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Códigos de Cupón de AliExpress</h1>
-        <p>¡Aprovecha grandes descuentos y ofertas constantemente actualizadas!</p>
+         <!-- Hero Banner -->
+        <div class="hero-banner">
+            <h1>Descuentos Exclusivos de AliExpress</h1>
+            <p>Encuentra los mejores cupones y ahorra en tus compras.</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar cupones...">
+            <button>Buscar</button>
+        </div>
 
         <div class="telegram-banner">
             ¡Únete a nuestro bot de Telegram!
@@ -180,8 +284,18 @@
         </div>
         <div class="coupon-code">IFPUFJB</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPUFJB', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPUFJB', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+    <div class="countdown-timer">Válido hasta: <span id="countdown-IFPUFJB"></span></div>
+     <!-- Star Rating (Example) -->
+        <div class="star-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+        </div>
+     <!-- Social Sharing Buttons -->
+        <div class="social-share-buttons">
+            <a href="#" onclick="shareCoupon('Facebook', 'IFPUFJB')"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#" onclick="shareCoupon('Twitter', 'IFPUFJB')"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
 </div>
 <div class="coupon-card">
     <div>
@@ -190,8 +304,9 @@
         </div>
         <div class="coupon-code">IFPSVOQ</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPSVOQ', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPSVOQ', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+    <div class="countdown-timer">Válido hasta: <span id="countdown-IFPSVOQ"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -200,8 +315,9 @@
         </div>
         <div class="coupon-code">IFP71AB</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFP71AB', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFP71AB', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+    <div class="countdown-timer">Válido hasta: <span id="countdown-IFP71AB"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -210,8 +326,9 @@
         </div>
         <div class="coupon-code">IFPLMSO</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPLMSO', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPLMSO', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+    <div class="countdown-timer">Válido hasta: <span id="countdown-IFPLMSO"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -220,8 +337,9 @@
         </div>
         <div class="coupon-code">IFPRQGY</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPRQGY', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPRQGY', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFPRQGY"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -230,8 +348,9 @@
         </div>
         <div class="coupon-code">IFPIJMD</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPIJMD', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPIJMD', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFPIJMD"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -240,8 +359,9 @@
         </div>
         <div class="coupon-code">IFPSAUB</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPSAUB', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPSAUB', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFPSAUB"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -250,8 +370,9 @@
         </div>
         <div class="coupon-code">IFP2MYF</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFP2MYF', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFP2MYF', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFP2MYF"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -260,8 +381,9 @@
         </div>
         <div class="coupon-code">IFPH08J</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPH08J', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPH08J', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+    <div class="countdown-timer">Válido hasta: <span id="countdown-IFPH08J"></span></div>
 </div>
 
 <h2>Categoría de Productos: Tecnología (Excepto Teléfonos Móviles)</h2>
@@ -272,8 +394,9 @@
         </div>
         <div class="coupon-code">IFPVA7J</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPVA7J', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPVA7J', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+    <div class="countdown-timer">Válido hasta: <span id="countdown-IFPVA7J"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -282,8 +405,9 @@
         </div>
         <div class="coupon-code">IFPF92W</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPF92W', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPF92W', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFPF92W"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -292,8 +416,9 @@
         </div>
         <div class="coupon-code">IFP7PEZ</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFP7PEZ', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFP7PEZ', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFP7PEZ"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -302,8 +427,9 @@
         </div>
         <div class="coupon-code">IFP5WHH</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFP5WHH', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFP5WHH', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFP5WHH"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -312,8 +438,9 @@
         </div>
         <div class="coupon-code">IFPIS1H</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPIS1H', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPIS1H', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFPIS1H"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -322,8 +449,9 @@
         </div>
         <div class="coupon-code">IFPBPEN</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPBPEN', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPBPEN', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFPBPEN"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -332,8 +460,9 @@
         </div>
         <div class="coupon-code">IFP8MNN</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFP8MNN', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFP8MNN', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFP8MNN"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -342,8 +471,9 @@
         </div>
         <div class="coupon-code">IFPUAE6</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPUAE6', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPUAE6', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+    <div class="countdown-timer">Válido hasta: <span id="countdown-IFPUAE6"></span></div>
 </div>
 
 <h2>Categoría de Productos: Big Save Channel (Excepto Teléfonos Móviles)</h2>
@@ -354,8 +484,9 @@
         </div>
         <div class="coupon-code">IFPXPHY</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPXPHY', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPXPHY', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFPXPHY"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -364,8 +495,9 @@
         </div>
         <div class="coupon-code">IFPJG7W</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPJG7W', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPJG7W', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+    <div class="countdown-timer">Válido hasta: <span id="countdown-IFPJG7W"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -374,8 +506,9 @@
         </div>
         <div class="coupon-code">IFPKUML</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPKUML', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPKUML', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFPKUML"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -384,8 +517,9 @@
         </div>
         <div class="coupon-code">IFPZXDT</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPZXDT', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPZXDT', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFPZXDT"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -394,8 +528,9 @@
         </div>
         <div class="coupon-code">IFPI0AE</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPI0AE', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPI0AE', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+    <div class="countdown-timer">Válido hasta: <span id="countdown-IFPI0AE"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -404,8 +539,9 @@
         </div>
         <div class="coupon-code">IFPHV4O</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPHV4O', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPHV4O', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFPHV4O"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -414,8 +550,9 @@
         </div>
         <div class="coupon-code">IFPGZME</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPGZME', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPGZME', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFPGZME"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -424,8 +561,9 @@
         </div>
         <div class="coupon-code">IFPXINQ</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPXINQ', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPXINQ', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+     <div class="countdown-timer">Válido حتى: <span id="countdown-IFPXINQ"></span></div>
 </div>
 
 <h2>Periodo: 14/02/2024 00:00 PT ~ 15/05/2024 Categoría de Productos: Hogar y Estilo de Vida (Electrodomésticos, Muebles, Juguetes...)</h2>
@@ -436,8 +574,9 @@
         </div>
         <div class="coupon-code">IFPZLLS</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPZLLS', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPZLLS', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPZLLS"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -446,8 +585,9 @@
         </div>
         <div class="coupon-code">IFPWQQP</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPWQQP', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPWQQP', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPWQQP"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -456,8 +596,9 @@
         </div>
         <div class="coupon-code">IFPYSHR</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPYSHR', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPYSHR', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPYSHR"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -466,8 +607,9 @@
         </div>
         <div class="coupon-code">IFPWPZF</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPWPZF', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPWPZF', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPWPZF"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -476,18 +618,19 @@
         </div>
         <div class="coupon-code">IFPDQLI</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPDQLI', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPDQLI', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPDQLI"></span></div>
 </div>
 <div class="coupon-card">
     <div>
         <div class="coupon-description">
             Descuento de $50 por compras de $359 o más
         </div>
-        <div class="coupon-code">IFPQRQ8</div>
-    </div>
-    <button class="copy-button" onclick="copyCode('IFPQRQ8', this)">Copiar</button>
+</div>
+    <button class="copy-button" onclick="copyCode('IFPQRQ8', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+        <div class="countdown-timer">Válido hasta: <span id="countdown-IFPQRQ8"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -496,8 +639,9 @@
         </div>
         <div class="coupon-code">IFPQFMS</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPQFMS', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPQFMS', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPQFMS"></span></div>
 </div>
 
 <h2>Categoría de Productos: Moda (Belleza, Ropa, Accesorios, Bolsos...)</h2>
@@ -508,8 +652,9 @@
         </div>
         <div class="coupon-code">IFPFBH0</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPFBH0', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPFBH0', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPFBH0"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -518,8 +663,9 @@
         </div>
         <div class="coupon-code">IFPCHF4</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPCHF4', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPCHF4', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPCHF4"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -528,8 +674,9 @@
         </div>
         <div class="coupon-code">IFPZCKE</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPZCKE', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPZCKE', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPZCKE"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -538,8 +685,9 @@
         </div>
         <div class="coupon-code">IFPPH7R</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPPH7R', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPPH7R', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPPH7R"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -548,8 +696,9 @@
         </div>
         <div class="coupon-code">IFPGKHE</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPGKHE', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPGKHE', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPGKHE"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -558,8 +707,9 @@
         </div>
         <div class="coupon-code">IFP0TX1</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFP0TX1', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFP0TX1', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFP0TX1"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -568,8 +718,9 @@
         </div>
         <div class="coupon-code">IFPDRNG</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPDRNG', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPDRNG', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPDRNG"></span></div>
 </div>
 
 <h2>Categoría de Productos: Tecnología (Excepto Teléfonos Móviles)</h2>
@@ -580,8 +731,9 @@
         </div>
         <div class="coupon-code">IFPTCQW</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPTCQW', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPTCQW', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPTCQW"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -590,8 +742,9 @@
         </div>
         <div class="coupon-code">IFPAUO8</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPAUO8', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPAUO8', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPAUO8"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -600,8 +753,9 @@
         </div>
         <div class="coupon-code">IFPVYE7</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPVYE7', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPVYE7', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPVYE7"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -610,8 +764,9 @@
         </div>
         <div class="coupon-code">IFPH5MQ</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPH5MQ', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPH5MQ', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPH5MQ"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -620,8 +775,9 @@
         </div>
         <div class="coupon-code">IFPZDVK</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPZDVK', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPZDVK', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPZDVK"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -630,8 +786,9 @@
         </div>
         <div class="coupon-code">IFPTMZW</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPTMZW', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPTMZW', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPTMZW"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -640,8 +797,9 @@
         </div>
         <div class="coupon-code">IFPIDHJ</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPIDHJ', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPIDHJ', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPIDHJ"></span></div>
 </div>
 
 <h2>Periodo: 10/02/2025 00:00 PT ~ 10/05/2025 Categoría de Productos: Variados</h2>
@@ -652,8 +810,9 @@
         </div>
         <div class="coupon-code">IFPPP6O</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPPP6O', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPPP6O', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPPP6O"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -662,8 +821,9 @@
         </div>
         <div class="coupon-code">IFPKG0W</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPKG0W', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPKG0W', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPKG0W"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -672,8 +832,9 @@
         </div>
         <div class="coupon-code">IFPBMLD</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPBMLD', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPBMLD', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPBMLD"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -682,8 +843,9 @@
         </div>
         <div class="coupon-code">IFPZIK0</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPZIK0', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPZIK0', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPZIK0"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -692,8 +854,9 @@
         </div>
         <div class="coupon-code">IFPBBFE</div>
     </div>
-    <button class="copy-button" onclick="copyCode('IFPBBFE', this)">Copiar</button>
+    <button class="copy-button" onclick="copyCode('IFPBBFE', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPBBFE"></span></div>
 </div>
 
 
@@ -716,6 +879,108 @@
                 alert('Error al copiar el código. Intenta copiarlo manualmente.');
             });
         }
+
+        // Function to calculate and display countdown timer
+        function startCountdown(couponCode, endDate) {
+            const countdownElement = document.getElementById(`countdown-${couponCode}`);
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = endDate - now;
+
+                if (distance > 0) {
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                } else {
+                    countdownElement.textContent = "¡Expirado!";
+                    clearInterval(intervalId);
+                }
+            }
+
+            updateCountdown(); // Initial call to set timer immediately
+            const intervalId = setInterval(updateCountdown, 1000);
+        }
+
+        // Example usage:
+        // Replace with the actual expiration dates of your coupons
+        document.addEventListener('DOMContentLoaded', function() {
+            startCountdown('IFPUFJB', new Date('2024-06-01T23:59:59').getTime());
+            startCountdown('IFPSVOQ', new Date('2024-06-05T23:59:59').getTime());
+            startCountdown('IFP71AB', new Date('2024-07-15T23:59:59').getTime());
+            startCountdown('IFPLMSO', new Date('2024-08-01T23:59:59').getTime());
+            startCountdown('IFPRQGY', new Date('2024-06-01T23:59:59').getTime());
+            startCountdown('IFPIJMD', new Date('2024-06-05T23:59:59').getTime());
+            startCountdown('IFPSAUB', new Date('2024-07-15T23:59:59').getTime());
+            startCountdown('IFP2MYF', new Date('2024-08-01T23:59:59').getTime());
+            startCountdown('IFPH08J', new Date('2024-06-01T23:59:59').getTime());
+            startCountdown('IFPVA7J', new Date('2024-06-05T23:59:59').getTime());
+            startCountdown('IFPF92W', new Date('2024-07-15T23:59:59').getTime());
+            startCountdown('IFP7PEZ', new Date('2024-08-01T23:59:59').getTime());
+            startCountdown('IFP5WHH', new Date('2024-06-01T23:59:59').getTime());
+            startCountdown('IFPIS1H', new Date('2024-06-05T23:59:59').getTime());
+            startCountdown('IFPBPEN', new Date('2024-07-15T23:59:59').getTime());
+            startCountdown('IFP8MNN', new Date('2024-08-01T23:59:59').getTime());
+            startCountdown('IFPUAE6', new Date('2024-06-01T23:59:59').getTime());
+            startCountdown('IFPXPHY', new Date('2024-06-05T23:59:59').getTime());
+            startCountdown('IFPJG7W', new Date('2024-07-15T23:59:59').getTime());
+            startCountdown('IFPKUML', new Date('2024-08-01T23:59:59').getTime());
+            startCountdown('IFPZXDT', new Date('2024-06-01T23:59:59').getTime());
+            startCountdown('IFPI0AE', new Date('2024-06-05T23:59:59').getTime());
+            startCountdown('IFPHV4O', new Date('2024-07-15T23:59:59').getTime());
+            startCountdown('IFPGZME', new Date('2024-08-01T23:59:59').getTime());
+            startCountdown('IFPXINQ', new Date('2024-06-01T23:59:59').getTime());
+            startCountdown('IFPZLLS', new Date('2024-06-05T23:59:59').getTime());
+            startCountdown('IFPWQQP', new Date('2024-07-15T23:59:59').getTime());
+            startCountdown('IFPYSHR', new Date('2024-08-01T23:59:59').getTime());
+            startCountdown('IFPWPZF', new Date('2024-06-01T23:59:59').getTime());
+            startCountdown('IFPDQLI', new Date('2024-06-05T23:59:59').getTime());
+            startCountdown('IFPQRQ8', new Date('2024-07-15T23:59:59').getTime());
+            startCountdown('IFPQFMS', new Date('2024-08-01T23:59:59').getTime());
+            startCountdown('IFPFBH0', new Date('2024-06-01T23:59:59').getTime());
+            startCountdown('IFPCHF4', new Date('2024-06-05T23:59:59').getTime());
+            startCountdown('IFPZCKE', new Date('2024-07-15T23:59:59').getTime());
+            startCountdown('IFPPH7R', new Date('2024-08-01T23:59:59').getTime());
+            startCountdown('IFPGKHE', new Date('2024-06-01T23:59:59').getTime());
+            startCountdown('IFP0TX1', new Date('2024-06-05T23:59:59').getTime());
+            startCountdown('IFPDRNG', new Date('2024-07-15T23:59:59').getTime());
+            startCountdown('IFPTCQW', new Date('2024-08-01T23:59:59').getTime());
+            startCountdown('IFPAUO8', new Date('2024-06-01T23:59:59').getTime());
+            startCountdown('IFPVYE7', new Date('2024-06-05T23:59:59').getTime());
+            startCountdown('IFPH5MQ', new Date('2024-07-15T23:59:59').getTime());
+            startCountdown('IFPZDVK', new Date('2024-08-01T23:59:59').getTime());
+            startCountdown('IFPTMZW', new Date('2024-06-01T23:59:59').getTime());
+            startCountdown('IFPIDHJ', new Date('2024-06-05T23:59:59').getTime());
+            startCountdown('IFPPP6O', new Date('2024-07-15T23:59:59').getTime());
+            startCountdown('IFPKG0W', new Date('2024-08-01T23:59:59').getTime());
+            startCountdown('IFPBMLD', new Date('2024-06-01T23:59:59').getTime());
+            startCountdown('IFPZIK0', new Date('2024-06-05T23:59:59').getTime());
+            startCountdown('IFPBBFE', new Date('2024-07-15T23:59:59').getTime());
+
+        });
+
+        function shareCoupon(platform, couponCode) {
+            let shareURL = "";
+            const text = `¡Mira este cupón de AliExpress: ${couponCode}!`;
+
+            switch (platform) {
+                case 'Facebook':
+                    shareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}"e=${text}`;
+                    break;
+                case 'Twitter':
+                    shareURL = `https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(window.location.href)}`;
+                    break;
+                // Add more platforms as needed
+                default:
+                    alert('Plataforma no soportada.');
+                    return;
+            }
+
+            window.open(shareURL, '_blank');
+        }
     </script>
 </body>
-</html>
+</html>    
