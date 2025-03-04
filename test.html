@@ -223,8 +223,8 @@
             margin-top: 10px;
         }
 
-        .social-share-buttons a {
-            background-color: #3b5998; /* Facebook blue */
+       .share-button {
+            background-color: #25D366; /* WhatsApp green */
             color: white;
             border: none;
             padding: 8px 12px;
@@ -234,14 +234,59 @@
             text-decoration: none;
             font-size: 0.9em;
             transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
         }
 
-        .social-share-buttons a:hover {
-            background-color: #2d4373; /* Darker blue on hover */
+        .share-button:hover {
+            background-color: #128C7E; /* Darker green on hover */
         }
 
-        .social-share-buttons a i {
+        .share-button i {
             margin-right: 5px;
+        }
+
+        /* Form Styles */
+        .comment-form {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .comment-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .comment-form textarea,
+        .comment-form input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding is included in width */
+        }
+
+        .comment-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment-form button:hover {
+            background-color: #2980b9;
+        }
+
+        .share-container {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -276,7 +321,7 @@
             La fecha de caducidad de cada cupón se indica a continuación.
         </div>
 
-        <h2>Productos Variados</h2>
+        <h2>Productos Variados (Belleza/Calzado/Ropa/Accesorios...)</h2>
 <div class="coupon-card">
     <div>
         <div class="coupon-description">
@@ -290,11 +335,6 @@
      <!-- Star Rating (Example) -->
         <div class="star-rating">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-        </div>
-     <!-- Social Sharing Buttons -->
-        <div class="social-share-buttons">
-            <a href="#" onclick="shareCoupon('Facebook', 'IFPUFJB')"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="#" onclick="shareCoupon('Twitter', 'IFPUFJB')"><i class="fab fa-twitter"></i> Twitter</a>
         </div>
 </div>
 <div class="coupon-card">
@@ -486,7 +526,7 @@
     </div>
     <button class="copy-button" onclick="copyCode('IFPXPHY', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
-        <div class="countdown-timer">Válido hasta: <span id="countdown-IFPXPHY"></span></div>
+        <div class="countdown-timer">Válido حتى: <span id="countdown-IFPXPHY"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -627,10 +667,11 @@
         <div class="coupon-description">
             Descuento de $50 por compras de $359 o más
         </div>
-</div>
+        <div class="coupon-code">IFPQRQ8</div>
+    </div>
     <button class="copy-button" onclick="copyCode('IFPQRQ8', this)"><i class="fas fa-copy"></i></button>
     <span class="copied-message">¡Copiado!</span>
-        <div class="countdown-timer">Válido hasta: <span id="countdown-IFPQRQ8"></span></div>
+         <div class="countdown-timer">Válido hasta: <span id="countdown-IFPQRQ8"></span></div>
 </div>
 <div class="coupon-card">
     <div>
@@ -659,7 +700,7 @@
 <div class="coupon-card">
     <div>
         <div class="coupon-description">
-            Descuento de $4 por compras de $39 o más
+            Descuento de $4 por compras de $39 o أكثر
         </div>
         <div class="coupon-code">IFPCHF4</div>
     </div>
@@ -859,8 +900,26 @@
          <div class="countdown-timer">Válido hasta: <span id="countdown-IFPBBFE"></span></div>
 </div>
 
+    </div>
 
+    <div class="share-container">
+        <button class="share-button" onclick="shareAll()">
+            <i class="fas fa-share-alt"></i> Compartir
+        </button>
+    </div>
 
+    <!-- Comment Form -->
+    <div class="comment-form">
+        <h3>Deja tu comentario</h3>
+        <form id="commentForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="comment">Comentario:</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
+
+            <button type="submit">Enviar Comentario</button>
+        </form>
     </div>
 
     <div class="footer">
@@ -962,25 +1021,31 @@
 
         });
 
-        function shareCoupon(platform, couponCode) {
-            let shareURL = "";
-            const text = `¡Mira este cupón de AliExpress: ${couponCode}!`;
+        function shareAll() {
+            const text = encodeURIComponent('¡Mira estos cupones de AliExpress!');
+            const url = encodeURIComponent(window.location.href);
 
-            switch (platform) {
-                case 'Facebook':
-                    shareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}"e=${text}`;
-                    break;
-                case 'Twitter':
-                    shareURL = `https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(window.location.href)}`;
-                    break;
-                // Add more platforms as needed
-                default:
-                    alert('Plataforma no soportada.');
-                    return;
-            }
+            // WhatsApp
+            window.open(`https://wa.me/?text=${text} ${url}`, '_blank');
 
-            window.open(shareURL, '_blank');
+            // Telegram
+            window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
         }
+
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+
+            // Aquí puedes enviar los datos del comentario a tu servidor
+            // o manipularlos como quieras (por ejemplo, mostrarlos en la página)
+            console.log(`Nombre: ${name}, Comentario: ${comment}`);
+
+            // Limpiar los campos del formulario
+            document.getElementById('name').value = '';
+            document.getElementById('comment').value = '';
+        });
     </script>
 </body>
-</html>    
+</html>
