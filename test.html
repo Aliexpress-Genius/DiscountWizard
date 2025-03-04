@@ -115,6 +115,7 @@
             text-decoration: none;
         }
 
+        /* Responsive Design - IMPROVED */
         @media (max-width: 768px) {
             .container {
                 padding: 10px;
@@ -123,11 +124,16 @@
 
             .coupon-card {
                 flex-direction: column;
-                align-items: stretch;
+                align-items: flex-start; /* Align items to the left */
+            }
+
+            .coupon-description {
+                margin-bottom: 10px; /* Add space below description */
             }
 
             .copy-button {
                 margin-top: 10px;
+                width: 100%; /* Make button full width */
             }
         }
 
@@ -165,8 +171,6 @@
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAPhJREFUOE99kMsNwjAQRG9RYBeQIVgFJAh2AQn0EEqCFYBCUQkYBAX8XgV+z/u9Qj8O2w4N7v4v3n3mnHtQO2h9hI7cAY6+V8c892mK07lQ19j85sC+G6Q1r5xJ572e6v34g/d6s7lS93F31w8V/8hD/xYf7h+48e+T9+sH8J1w437k/nE74g/cI/3mY5Y6i/Cj/s9T8oN9j/e7o/4tJ4I6I4V6m42xV43yYwY9w0r6h0bV1J5bQv5oR/50D/8f/L0M+kK1rVdAAAAAElFTkSuQmCC" alt="Calendar Icon" style="vertical-align: middle; margin-right: 5px;">
             La fecha de caducidad de cada cupón se indica a continuación.
         </div>
-
-
 
         <h2>Productos Variados (Belleza/Calzado/Ropa/Accesorios...)</h2>
 <div class="coupon-card">
