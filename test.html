@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Descuentos Exclusivos!</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .coupon-category {
+            margin-bottom: 30px;
+        }
+
+        .coupon-category h2 {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .coupon-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .coupon-card:hover {
+            transform: scale(1.03);
+        }
+
+        .coupon-details {
+            flex-grow: 1;
+        }
+
+        .coupon-code {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2ecc71;
+        }
+
+        .coupon-description {
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        .copy-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .coupon-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .copy-button {
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #888;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>¡Aprovecha Nuestras Ofertas Exclusivas!</h1>
+        <p>Encuentra descuentos increíbles en una amplia variedad de productos. ¡No pierdas esta oportunidad!</p>
+
+        <div class="coupon-category">
+            <h2>Ofertas del 14/02/2024 - 15/05/2024</h2>
+            <p><i>(00:00 PT - Hora del Pacífico)</i></p>
+            
+            <h3>Productos Variados (Belleza, Zapatos, Ropa, Accesorios...)</h3>
+            <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $1 por compras de $9 o más</div>
+                    <div class="coupon-code">IFPUFJB</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPUFJB')">Copiar</button>
+            </div>
+            <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $2 por compras de $19 o más</div>
+                    <div class="coupon-code">IFPSVOQ</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPSVOQ')">Copiar</button>
+            </div>
+            <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $5 por compras de $39 o más</div>
+                    <div class="coupon-code">IFP71AB</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFP71AB')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $10 por compras de $79 o más</div>
+                    <div class="coupon-code">IFPLMSO</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPLMSO')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $20 por compras de $159 o más</div>
+                    <div class="coupon-code">IFPRQGY</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPRQGY')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $35 por compras de $269 o más</div>
+                    <div class="coupon-code">IFPIJMD</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPIJMD')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $50 por compras de $369 o más</div>
+                    <div class="coupon-code">IFPSAUB</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPSAUB')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $70 por compras de $499 o más</div>
+                    <div class="coupon-code">IFP2MYF</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFP2MYF')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $90 por compras de $599 o más</div>
+                    <div class="coupon-code">IFPH08J</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPH08J')">Copiar</button>
+            </div>
+
+
+            <h3>Tecnología (Excepto Teléfonos Móviles)</h3>
+            <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $2 por compras de $19 o más</div>
+                    <div class="coupon-code">IFPVA7J</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPVA7J')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $5 por compras de $39 o más</div>
+                    <div class="coupon-code">IFPF92W</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPF92W')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $10 por compras de $79 o más</div>
+                    <div class="coupon-code">IFP7PEZ</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFP7PEZ')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $20 por compras de $159 o más</div>
+                    <div class="coupon-code">IFP5WHH</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFP5WHH')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $35 por compras de $269 o más</div>
+                    <div class="coupon-code">IFPIS1H</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPIS1H')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $50 por compras de $369 o más</div>
+                    <div class="coupon-code">IFPBPEN</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPBPEN')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $70 por compras de $499 o más</div>
+                    <div class="coupon-code">IFP8MNN</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFP8MNN')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $90 por compras de $599 o más</div>
+                    <div class="coupon-code">IFPUAE6</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPUAE6')">Copiar</button>
+            </div>
+
+
+            <h3>Big Save Channel (Excepto Teléfonos Móviles)</h3>
+            <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $2 por compras de $19 o más</div>
+                    <div class="coupon-code">IFPXPHY</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPXPHY')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $5 por compras de $39 o más</div>
+                    <div class="coupon-code">IFPJG7W</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPJG7W')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $10 por compras de $79 o más</div>
+                    <div class="coupon-code">IFPKUML</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPKUML')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $20 por compras de $159 o más</div>
+                    <div class="coupon-code">IFPZXDT</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPZXDT')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $35 por compras de $269 o más</div>
+                    <div class="coupon-code">IFPI0AE</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPI0AE')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $50 por compras de $369 o más</div>
+                    <div class="coupon-code">IFPHV4O</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPHV4O')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $70 por compras de $499 o más</div>
+                    <div class="coupon-code">IFPGZME</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPGZME')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $90 por compras de $599 o más</div>
+                    <div class="coupon-code">IFPXINQ</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPXINQ')">Copiar</button>
+            </div>
+
+        </div>
+
+        <div class="coupon-category">
+            <h2>Ofertas del 10/02/2025 - 10/05/2025</h2>
+             <p><i>(00:00 PT - Hora del Pacífico)</i></p>
+
+            <h3>Hogar y Estilo de Vida (Electrodomésticos, Muebles, Juguetes...)</h3>
+            <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $2 por compras de $19 o más</div>
+                    <div class="coupon-code">IFPZLLS</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPZLLS')">Copiar</button>
+            </div>
+            <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $4 por compras de $39 o más</div>
+                    <div class="coupon-code">IFPWQQP</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPWQQP')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $10 por compras de $89 o más</div>
+                    <div class="coupon-code">IFPYSHR</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPYSHR')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $20 por compras de $169 o más</div>
+                    <div class="coupon-code">IFPWPZF</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPWPZF')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $35 por compras de $269 o más</div>
+                    <div class="coupon-code">IFPDQLI</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPDQLI')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $50 por compras de $359 o más</div>
+                    <div class="coupon-code">IFPQRQ8</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPQRQ8')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $70 por compras de $499 o más</div>
+                    <div class="coupon-code">IFPQFMS</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPQFMS')">Copiar</button>
+            </div>
+
+            <h3>Moda (Belleza, Ropa, Accesorios, Bolsos...)</h3>
+            <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $2 por compras de $19 o más</div>
+                    <div class="coupon-code">IFPFBH0</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPFBH0')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $4 por compras de $39 o más</div>
+                    <div class="coupon-code">IFPCHF4</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPCHF4')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $10 por compras de $89 o más</div>
+                    <div class="coupon-code">IFPZCKE</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPZCKE')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $20 por compras de $169 o más</div>
+                    <div class="coupon-code">IFPPH7R</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPPH7R')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $35 por compras de $269 o más</div>
+                    <div class="coupon-code">IFPGKHE</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPGKHE')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $50 por compras de $359 o más</div>
+                    <div class="coupon-code">IFP0TX1</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFP0TX1')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $70 por compras de $499 o más</div>
+                    <div class="coupon-code">IFPDRNG</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPDRNG')">Copiar</button>
+            </div>
+
+
+            <h3>Tecnología (Excepto Teléfonos Móviles)</h3>
+            <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $2 por compras de $19 o más</div>
+                    <div class="coupon-code">IFPTCQW</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPTCQW')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $4 por compras de $39 o más</div>
+                    <div class="coupon-code">IFPAUO8</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPAUO8')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $10 por compras de $89 o más</div>
+                    <div class="coupon-code">IFPVYE7</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPVYE7')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $20 por compras de $169 o más</div>
+                    <div class="coupon-code">IFPH5MQ</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPH5MQ')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $35 por compras de $269 o más</div>
+                    <div class="coupon-code">IFPZDVK</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPZDVK')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $50 por compras de $359 o más</div>
+                    <div class="coupon-code">IFPTMZW</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPTMZW')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $70 por compras de $499 o más</div>
+                    <div class="coupon-code">IFPIDHJ</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPIDHJ')">Copiar</button>
+            </div>
+        </div>
+
+        <div class="coupon-category">
+            <h2>Ofertas sin fecha especificada</h2>
+
+            <h3>Productos Variados</h3>
+            <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $4 por compras de $39 o más</div>
+                    <div class="coupon-code">IFPPP6O</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPPP6O')">Copiar</button>
+            </div>
+             <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $10 por compras de $89 o más</div>
+                    <div class="coupon-code">IFPKG0W</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPKG0W')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $20 por compras de $159 o más</div>
+                    <div class="coupon-code">IFPBMLD</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPBMLD')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $40 por compras de $299 o más</div>
+                    <div class="coupon-code">IFPZIK0</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPZIK0')">Copiar</button>
+            </div>
+              <div class="coupon-card">
+                <div class="coupon-details">
+                    <div class="coupon-description">Descuento de $70 por compras de $499 o más</div>
+                    <div class="coupon-code">IFPBBFE</div>
+                </div>
+                <button class="copy-button" onclick="copyCode('IFPBBFE')">Copiar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        💡 Consejo: Utiliza el código adecuado al finalizar tu compra.
+    </div>
+
+    <script>
+        function copyCode(code) {
+            navigator.clipboard.writeText(code).then(function() {
+                alert('¡Código copiado: ' + code + '!');
+            }, function(err) {
+                console.error('Error al copiar el código: ', err);
+                alert('Error al copiar el código. Intenta copiarlo manualmente.');
+            });
+        }
+    </script>
+</body>
+</html>
