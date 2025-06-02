@@ -4,172 +4,211 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags -->
-    <title>DiscountWizard: Encuentra Chollos y Descuentos en AliExpress | Ahorra Dinero</title>
-    <meta name="description" content="Usa DiscountWizard para descubrir fácilmente las mejores ofertas, cupones y descuentos ocultos en AliExpress. ¡Empieza a ahorrar en tus compras online hoy mismo!">
-    <meta name="keywords" content="descuentos AliExpress, ofertas AliExpress, cupones AliExpress, buscador de descuentos AliExpress, ahorrar en AliExpress, chollos AliExpress, herramienta AliExpress">
-    <meta name="author" content="Ali Mortada">
-
-    <!-- Favicon (اختياري - ضع رابط أيقونتك هنا) -->
-    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
-
-    <!-- Bootstrap CSS (أو أي إطار عمل CSS تستخدمه) -->
+    <title>Ofertas y Descuentos Increíbles - Ahorra Ahora</title>
+    <meta name="description" content="Encuentra las mejores ofertas y códigos de descuento para tus compras online. ¡Empieza a ahorrar hoy mismo!">
+    
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS (اختياري - لستايلاتك الخاصة) -->
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
             color: #333;
+            padding-top: 20px;
         }
-        .hero {
-            background-color: #007bff; /* يمكنك تغيير هذا اللون ليناسب AliExpress */
-            color: white;
-            padding: 60px 20px;
+        .container {
+            max-width: 900px;
+        }
+        .header-title {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            color: #2c3e50;
         }
-        .hero h1 {
-            font-size: 2.8em;
+        .header-title h1 {
+            font-weight: 700;
+        }
+        .offer-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease-in-out;
+        }
+        .offer-card:hover {
+            transform: translateY(-5px);
+        }
+        .offer-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #3498db; /* لون لتمييز العنوان */
+            margin-bottom: 10px;
+        }
+        .offer-description {
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .offer-code-section {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .offer-code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #e74c3c; /* لون مميز للكود */
+        }
+        .btn-copy-code {
+            background-color: #2ecc71; /* أخضر */
+            border-color: #2ecc71;
+            color: white;
+            font-size: 0.9em;
+        }
+        .btn-copy-code:hover {
+            background-color: #27ae60;
+            border-color: #27ae60;
+        }
+        .btn-go-to-offer {
+            background-color: #f39c12; /* برتقالي */
+            border-color: #f39c12;
+            color: white;
+            width: 100%; /* يجعل الزر يملأ المساحة */
             font-weight: bold;
         }
-        .hero p {
-            font-size: 1.2em;
+        .btn-go-to-offer:hover {
+            background-color: #e67e22;
+            border-color: #e67e22;
         }
-        .search-container {
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-        }
-        .content-section {
-            padding: 20px 0;
-        }
-        .content-section h2 {
-            color: #007bff;
-            margin-bottom: 20px;
+        .copied-feedback {
+            font-size: 0.8em;
+            color: green;
+            margin-left: 10px;
+            display: none; /* مخفي مبدئيًا */
         }
         footer {
-            background-color: #343a40;
-            color: white;
-            padding: 20px 0;
             text-align: center;
-            margin-top: 40px;
-        }
-        footer a {
-            color: #f8f9fa;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            color: #007bff;
-            text-decoration: none;
+            padding: 20px 0;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #7f8c8d;
         }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="container">
-            <h1>DiscountWizard</h1>
-            <p>Tu Asistente Inteligente para Encontrar los Mejores Chollos y Descuentos en AliExpress</p>
+    <div class="container">
+        <div class="header-title">
+            <h1>🎁 ¡Ofertas y Descuentos Exclusivos! 🎁</h1>
+            <p class="lead">Aprovecha estos códigos y enlaces para ahorrar en tus tiendas favoritas.</p>
         </div>
-    </header>
 
-    <main class="container">
-        <section class="search-container text-center">
-            <h2>Busca y encuentra las mejores ofertas al instante</h2>
-            <form id="searchForm" class="form-inline justify-content-center">
-                <div class="form-group mx-sm-3 mb-2">
-                    <label for="searchInput" class="sr-only">Buscar producto</label>
-                    <input type="text" class="form-control form-control-lg" id="searchInput" placeholder="Ej: 'auriculares bluetooth', 'reloj inteligente'...">
-                </div>
-                <button type="submit" class="btn btn-warning btn-lg mb-2">Buscar Descuentos</button>
-            </form>
-            <small class="form-text text-muted">
-                Introduce el nombre del producto que buscas en AliExpress.
-            </small>
-        </section>
+        <!-- Inicio de la lista de ofertas -->
+        <div id="offersContainer" class="row">
+            <!-- Las ofertas se añadirán aquí mediante JavaScript -->
+        </div>
+        <!-- Fin de la lista de ofertas -->
 
-        <hr>
-
-        <section class="content-section">
-            <h2>¿Cómo funciona DiscountWizard?</h2>
-            <p>DiscountWizard es una herramienta sencilla pero poderosa diseñada para ayudarte a ahorrar dinero en tus compras en AliExpress. En lugar de navegar por innumerables páginas, simplemente introduce el nombre del producto que deseas y nuestra herramienta te llevará directamente a los resultados de búsqueda en AliExpress, optimizados para mostrarte las mejores ofertas disponibles.</p>
-            <p><strong>Pasos para usar DiscountWizard:</strong></p>
-            <ol>
-                <li><strong>Introduce tu búsqueda:</strong> Escribe el nombre del producto que te interesa en la barra de búsqueda de arriba.</li>
-                <li><strong>Haz clic en "Buscar Descuentos":</strong> Nuestra herramienta abrirá una nueva pestaña con los resultados de AliExpress.</li>
-                <li><strong>Compara y ahorra:</strong> Revisa los productos, compara precios y ¡disfruta de tus ahorros!</li>
-            </ol>
-            <p><em>Nota: DiscountWizard no almacena tu información de búsqueda ni tiene acceso a tu cuenta de AliExpress. Simplemente facilitamos tu búsqueda.</em></p>
-        </section>
-
-        <hr>
-
-        <section class="content-section">
-            <h2>Consejos para Ahorrar al Máximo en AliExpress</h2>
-            <ul>
-                <li><strong>Compara precios entre vendedores:</strong> Muchos productos son vendidos por diferentes tiendas. ¡No te quedes con el primero que veas!</li>
-                <li><strong>Revisa las valoraciones y comentarios:</strong> La experiencia de otros compradores es clave para tomar una buena decisión.</li>
-                <li><strong>Aprovecha los cupones:</strong> Busca cupones del vendedor, cupones de AliExpress y códigos promocionales.</li>
-                <li><strong>Estate atento a las ofertas flash y eventos especiales:</strong> Días como el 11.11 (Día del Soltero) o el Black Friday suelen tener grandes descuentos.</li>
-                <li><strong>Usa la lista de deseos:</strong> Guarda productos que te interesan y AliExpress podría notificarte si bajan de precio.</li>
-                <li><strong>Considera el coste de envío:</strong> A veces un producto más barato tiene un envío más caro. Suma ambos costes.</li>
-            </ul>
-        </section>
-
-        <hr>
-
-        <section class="content-section">
-            <h2>Preguntas Frecuentes (FAQ)</h2>
-            <dl>
-                <dt>¿Es DiscountWizard gratis?</dt>
-                <dd>Sí, nuestra herramienta es completamente gratuita para todos los usuarios.</dd>
-
-                <dt>¿Necesito registrarme para usar la herramienta?</dt>
-                <dd>No, no es necesario ningún tipo de registro. Puedes usarla directamente.</dd>
-
-                <dt>¿DiscountWizard está afiliado a AliExpress?</dt>
-                <dd>No, DiscountWizard es una herramienta independiente creada para ayudar a los compradores. No estamos afiliados oficialmente con AliExpress.</dd>
-                
-                <dt>¿Cómo se asegura DiscountWizard de mostrar los "mejores" descuentos?</dt>
-                <dd>DiscountWizard te dirige a la página de resultados de búsqueda de AliExpress utilizando tu término de búsqueda. AliExpress suele ordenar los resultados por relevancia o popularidad, lo que a menudo incluye buenas ofertas. Te animamos a utilizar los filtros de AliExpress (por precio, valoraciones, etc.) para refinar tu búsqueda.</dd>
-            </dl>
-        </section>
-    </main>
+    </div>
 
     <footer>
-        <div class="container">
-            <p>
-                Hecho con ❤️ por Ali Mortada
-                <br>
-                <a href="https://github.com/aliexpress-genius" target="_blank" rel="noopener noreferrer">GitHub</a> | 
-                <a href="https://yourusername.github.io" target="_blank" rel="noopener noreferrer">Portafolio</a> | 
-                <a href="https://www.linkedin.com/in/alimortada/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </p>
-            <p><small>© <span id="currentYear"></span> DiscountWizard. Todos los derechos reservados (simbólico, ya que es un proyecto abierto).</small></p>
-        </div>
+        <p>© <span id="currentYear"></span> TuNombreDeProyecto. Todos los derechos reservados (simbólico).</p>
+        <p><small>Hecho con ❤️ para ayudarte a ahorrar.</small></p>
     </footer>
 
-    <!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Custom JavaScript -->
     <script>
-        document.getElementById('searchForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evitar el envío del formulario por defecto
-            const searchTerm = document.getElementById('searchInput').value.trim();
-            if (searchTerm) {
-                // Construir la URL de búsqueda de AliExpress
-                // Puedes ajustar los parámetros de la URL si conoces mejores formas de filtrar o buscar
-                const searchUrl = `https://es.aliexpress.com/w/wholesale-${encodeURIComponent(searchTerm.replace(/\s+/g, '-'))}.html?SearchText=${encodeURIComponent(searchTerm)}&SortType=default`;
-                // Abrir en una nueva pestaña
-                window.open(searchUrl, '_blank');
-            } else {
-                alert('Por favor, introduce un término de búsqueda.');
-            }
+        // Lista de ofertas (puedes añadir/editar aquí)
+        const offers = [
+            {
+                id: 'offer1',
+                title: '20% Descuento en Electrónicos Seleccionados',
+                description: 'Ahorra un 20% en una amplia gama de productos electrónicos. ¡No te lo pierdas!',
+                store: 'Tienda Ejemplo A',
+                code: 'ELECTRO20',
+                link: 'https://www.ejemplo.com/electronicos', // الرابط الفعلي للعرض
+                image: 'https://via.placeholder.com/300x200.png?text=Electrónicos' // رابط صورة (اختياري)
+            },
+            {
+                id: 'offer2',
+                title: '15€ de Regalo en tu Primera Compra Superior a 75€',
+                description: 'Obtén 15€ de descuento directo en tu primer pedido si supera los 75€. ¡Ideal para nuevos clientes!',
+                store: 'Moda Fantástica',
+                code: 'NUEVO15',
+                link: 'https://www.ejemplo.com/modafantastica',
+                image: 'https://via.placeholder.com/300x200.png?text=Moda'
+            },
+            {
+                id: 'offer3',
+                title: 'Envío Gratis en Todos los Pedidos',
+                description: 'No pagues gastos de envío en ninguna de tus compras durante esta semana.',
+                store: 'Libros y Más',
+                code: 'ENVIOGRATIS', // قد لا يكون هناك كود، فقط رابط
+                link: 'https://www.ejemplo.com/librosymas',
+                image: 'https://via.placeholder.com/300x200.png?text=Libros'
+            },
+            // Añade más ofertas aquí como objetos JavaScript
+            // {
+            //     id: 'offer4',
+            //     title: 'Otro Descuento Fantástico',
+            //     description: 'Descripción del descuento.',
+            //     store: 'Otra Tienda',
+            //     code: 'SUPERCODE',
+            //     link: 'https://www.ejemplo.com/otratienda',
+            //     image: 'https://via.placeholder.com/300x200.png?text=Oferta'
+            // }
+        ];
+
+        const offersContainer = document.getElementById('offersContainer');
+
+        offers.forEach(offer => {
+            const offerCard = `
+                <div class="col-md-6 col-lg-4">
+                    <div class="offer-card" id="${offer.id}">
+                        ${offer.image ? `<img src="${offer.image}" class="card-img-top mb-3" alt="${offer.title}">` : ''}
+                        <h3 class="offer-title">${offer.title}</h3>
+                        <p class="text-muted"><small>Tienda: ${offer.store}</small></p>
+                        <p class="offer-description">${offer.description}</p>
+                        
+                        ${offer.code ? `
+                        <div class="offer-code-section">
+                            <div>Código: <strong class="offer-code" id="code-${offer.id}">${offer.code}</strong></div>
+                            <button class="btn btn-sm btn-copy-code" onclick="copyCode('${offer.code}', '${offer.id}')">
+                                Copiar
+                            </button>
+                            <span class="copied-feedback" id="feedback-${offer.id}">¡Copiado!</span>
+                        </div>
+                        ` : ''}
+                        
+                        <a href="${offer.link}" target="_blank" rel="noopener noreferrer" class="btn btn-go-to-offer">
+                            Ir a la Oferta
+                        </a>
+                    </div>
+                </div>
+            `;
+            offersContainer.innerHTML += offerCard;
         });
+
+        function copyCode(codeToCopy, offerId) {
+            navigator.clipboard.writeText(codeToCopy).then(() => {
+                const feedbackElement = document.getElementById(`feedback-${offerId}`);
+                feedbackElement.style.display = 'inline';
+                setTimeout(() => {
+                    feedbackElement.style.display = 'none';
+                }, 2000); // إخفاء الرسالة بعد ثانيتين
+            }).catch(err => {
+                console.error('Error al copiar el código: ', err);
+                alert('Error al copiar el código. Inténtalo manualmente.');
+            });
+        }
 
         // Para el año actual en el footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
