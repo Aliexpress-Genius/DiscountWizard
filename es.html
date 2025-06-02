@@ -3,216 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Ofertas y Descuentos Increíbles - Ahorra Ahora</title>
-    <meta name="description" content="Encuentra las mejores ofertas y códigos de descuento para tus compras online. ¡Empieza a ahorrar hoy mismo!">
-    
+    <title>Asistente de Ofertas Interactivo</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            padding-top: 20px;
-        }
-        .container {
-            max-width: 900px;
-        }
-        .header-title {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #2c3e50;
-        }
-        .header-title h1 {
-            font-weight: 700;
-        }
-        .offer-card {
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease-in-out;
-        }
-        .offer-card:hover {
-            transform: translateY(-5px);
-        }
-        .offer-title {
-            font-size: 1.4em;
-            font-weight: 600;
-            color: #3498db; /* لون لتمييز العنوان */
-            margin-bottom: 10px;
-        }
-        .offer-description {
-            font-size: 0.95em;
-            margin-bottom: 15px;
-            color: #555;
-        }
-        .offer-code-section {
-            background-color: #ecf0f1;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 15px;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #e5ddd5; /* لون خلفية شبيه بتليجرام */
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 10px;
+        }
+        .chat-container {
+            width: 100%;
+            max-width: 500px; /* أو العرض الذي تراه مناسبًا */
+            height: 80vh; /* أو الارتفاع الذي تراه مناسبًا */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .chat-header {
+            background-color: #0088cc; /* لون رأس شبيه بتليجرام */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .chat-messages {
+            flex-grow: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .message {
+            max-width: 75%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            font-size: 0.95em;
+        }
+        .message.user {
+            background-color: #dcf8c6; /* لون رسالة المستخدم */
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+        .message.bot {
+            background-color: #f1f0f0; /* لون رسالة البوت */
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+        .message.bot strong { /* لتمييز الأكواد أو العناوين */
+            color: #007bff;
+        }
+        .message .offer-link, .message .copy-code-btn {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .message .offer-link {
+            background-color: #28a745;
+            color: white;
+        }
+         .message .copy-code-btn {
+            background-color: #ffc107;
+            color: #333;
+            border: none;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        .chat-input-area {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            background-color: #f8f9fa;
+        }
+        .chat-input-area input[type="text"] {
+            flex-grow: 1;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            padding: 10px 15px;
+            margin-right: 10px;
+            font-size: 0.95em;
+        }
+        .chat-input-area button {
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            font-size: 1.5em;
+            display: flex;
+            justify-content: center;
             align-items: center;
         }
-        .offer-code {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #e74c3c; /* لون مميز للكود */
+        .quick-replies {
+            padding: 5px 10px 0 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        .btn-copy-code {
-            background-color: #2ecc71; /* أخضر */
-            border-color: #2ecc71;
+        .quick-reply-btn {
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            color: #495057;
+            padding: 5px 12px;
+            margin: 5px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 0.85em;
+        }
+        .quick-reply-btn:hover {
+            background-color: #007bff;
             color: white;
-            font-size: 0.9em;
-        }
-        .btn-copy-code:hover {
-            background-color: #27ae60;
-            border-color: #27ae60;
-        }
-        .btn-go-to-offer {
-            background-color: #f39c12; /* برتقالي */
-            border-color: #f39c12;
-            color: white;
-            width: 100%; /* يجعل الزر يملأ المساحة */
-            font-weight: bold;
-        }
-        .btn-go-to-offer:hover {
-            background-color: #e67e22;
-            border-color: #e67e22;
-        }
-        .copied-feedback {
-            font-size: 0.8em;
-            color: green;
-            margin-left: 10px;
-            display: none; /* مخفي مبدئيًا */
-        }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #7f8c8d;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="header-title">
-            <h1>🎁 ¡Ofertas y Descuentos Exclusivos! 🎁</h1>
-            <p class="lead">Aprovecha estos códigos y enlaces para ahorrar en tus tiendas favoritas.</p>
+    <div class="chat-container">
+        <div class="chat-header">
+            🤖 Asistente de Ofertas AliExpress
         </div>
-
-        <!-- Inicio de la lista de ofertas -->
-        <div id="offersContainer" class="row">
-            <!-- Las ofertas se añadirán aquí mediante JavaScript -->
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will appear here -->
         </div>
-        <!-- Fin de la lista de ofertas -->
-
+        <div class="quick-replies" id="quickRepliesContainer">
+            <!-- Quick replies will appear here -->
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="userInput" placeholder="Escribe 'ofertas' o elige una opción...">
+            <button id="sendButton" aria-label="Enviar">➤</button>
+        </div>
     </div>
 
-    <footer>
-        <p>© <span id="currentYear"></span> TuNombreDeProyecto. Todos los derechos reservados (simbólico).</p>
-        <p><small>Hecho con ❤️ para ayudarte a ahorrar.</small></p>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <script>
-        // Lista de ofertas (puedes añadir/editar aquí)
-        const offers = [
-            {
-                id: 'offer1',
-                title: '20% Descuento en Electrónicos Seleccionados',
-                description: 'Ahorra un 20% en una amplia gama de productos electrónicos. ¡No te lo pierdas!',
-                store: 'Tienda Ejemplo A',
-                code: 'ELECTRO20',
-                link: 'https://www.ejemplo.com/electronicos', // الرابط الفعلي للعرض
-                image: 'https://via.placeholder.com/300x200.png?text=Electrónicos' // رابط صورة (اختياري)
-            },
-            {
-                id: 'offer2',
-                title: '15€ de Regalo en tu Primera Compra Superior a 75€',
-                description: 'Obtén 15€ de descuento directo en tu primer pedido si supera los 75€. ¡Ideal para nuevos clientes!',
-                store: 'Moda Fantástica',
-                code: 'NUEVO15',
-                link: 'https://www.ejemplo.com/modafantastica',
-                image: 'https://via.placeholder.com/300x200.png?text=Moda'
-            },
-            {
-                id: 'offer3',
-                title: 'Envío Gratis en Todos los Pedidos',
-                description: 'No pagues gastos de envío en ninguna de tus compras durante esta semana.',
-                store: 'Libros y Más',
-                code: 'ENVIOGRATIS', // قد لا يكون هناك كود، فقط رابط
-                link: 'https://www.ejemplo.com/librosymas',
-                image: 'https://via.placeholder.com/300x200.png?text=Libros'
-            },
-            // Añade más ofertas aquí como objetos JavaScript
-            // {
-            //     id: 'offer4',
-            //     title: 'Otro Descuento Fantástico',
-            //     description: 'Descripción del descuento.',
-            //     store: 'Otra Tienda',
-            //     code: 'SUPERCODE',
-            //     link: 'https://www.ejemplo.com/otratienda',
-            //     image: 'https://via.placeholder.com/300x200.png?text=Oferta'
-            // }
-        ];
+        const chatMessages = document.getElementById('chatMessages');
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendButton');
+        const quickRepliesContainer = document.getElementById('quickRepliesContainer');
 
-        const offersContainer = document.getElementById('offersContainer');
+        // قواعد بيانات العروض (يمكنك توسيعها)
+        const allOffers = {
+            "electronica": [
+                { title: "Auriculares Bluetooth 5.0", store: "TechWorld", code: "TECH25", link: "#", description: "Sonido increíble y batería duradera." },
+                { title: "Smartwatch Deportivo", store: "FitGadget", code: null, link: "#", description: "Monitoriza tu actividad y salud." }
+            ],
+            "moda": [
+                { title: "Camiseta Verano 2024", store: "StyleNow", code: "MODA10", link: "#", description: "Diseño fresco y cómodo." },
+                { title: "Zapatillas Urbanas", store: "UrbanKicks", code: "KICKS15", link: "#", description: "Perfectas para el día a día." }
+            ],
+            "hogar": [
+                { title: "Lámpara LED Inteligente", store: "HomeBright", code: "LUZ5", link: "#", description: "Controla la iluminación desde tu móvil." }
+            ]
+        };
 
-        offers.forEach(offer => {
-            const offerCard = `
-                <div class="col-md-6 col-lg-4">
-                    <div class="offer-card" id="${offer.id}">
-                        ${offer.image ? `<img src="${offer.image}" class="card-img-top mb-3" alt="${offer.title}">` : ''}
-                        <h3 class="offer-title">${offer.title}</h3>
-                        <p class="text-muted"><small>Tienda: ${offer.store}</small></p>
-                        <p class="offer-description">${offer.description}</p>
-                        
-                        ${offer.code ? `
-                        <div class="offer-code-section">
-                            <div>Código: <strong class="offer-code" id="code-${offer.id}">${offer.code}</strong></div>
-                            <button class="btn btn-sm btn-copy-code" onclick="copyCode('${offer.code}', '${offer.id}')">
-                                Copiar
-                            </button>
-                            <span class="copied-feedback" id="feedback-${offer.id}">¡Copiado!</span>
-                        </div>
-                        ` : ''}
-                        
-                        <a href="${offer.link}" target="_blank" rel="noopener noreferrer" class="btn btn-go-to-offer">
-                            Ir a la Oferta
-                        </a>
-                    </div>
-                </div>
-            `;
-            offersContainer.innerHTML += offerCard;
-        });
+        // حالة المحادثة (بسيطة جدًا)
+        let conversationState = "inicio";
 
-        function copyCode(codeToCopy, offerId) {
-            navigator.clipboard.writeText(codeToCopy).then(() => {
-                const feedbackElement = document.getElementById(`feedback-${offerId}`);
-                feedbackElement.style.display = 'inline';
-                setTimeout(() => {
-                    feedbackElement.style.display = 'none';
-                }, 2000); // إخفاء الرسالة بعد ثانيتين
+        function addMessage(text, sender, isHtml = false) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', sender);
+            if (isHtml) {
+                messageElement.innerHTML = text;
+            } else {
+                messageElement.textContent = text;
+            }
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to bottom
+        }
+
+        function displayOffers(category) {
+            const offers = allOffers[category];
+            if (offers && offers.length > 0) {
+                addMessage(`Claro, aquí tienes algunas ofertas de <strong>${category}</strong>:`, 'bot');
+                offers.forEach(offer => {
+                    let offerHtml = `
+                        <p><strong>${offer.title}</strong> en ${offer.store}<br>
+                        <em>${offer.description}</em></p>`;
+                    if (offer.code) {
+                        offerHtml += `<button class="copy-code-btn" onclick="copyToClipboard('${offer.code}')">Copiar Código: ${offer.code}</button> `;
+                    }
+                    offerHtml += `<a href="${offer.link}" target="_blank" class="offer-link">Ver Oferta</a>`;
+                    addMessage(offerHtml, 'bot', true);
+                });
+            } else {
+                addMessage(`Lo siento, no encontré ofertas para la categoría "${category}" en este momento.`, 'bot');
+            }
+            setTimeout(showInitialOptions, 1000); // Mostrar opciones iniciales de nuevo
+        }
+        
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                addMessage('<em>Código copiado al portapapeles.</em>', 'bot', true);
             }).catch(err => {
-                console.error('Error al copiar el código: ', err);
-                alert('Error al copiar el código. Inténtalo manualmente.');
+                console.error('Error al copiar: ', err);
+                addMessage('<em>Error al copiar el código.</em>', 'bot', true);
             });
         }
 
-        // Para el año actual en el footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
 
+        function processUserInput(input) {
+            addMessage(input, 'user');
+            userInput.value = ''; // Clear input field
+            clearQuickReplies();
+
+            // Lógica de respuesta del "bot" (muy simplificada)
+            const lowerInput = input.toLowerCase().trim();
+
+            if (conversationState === "inicio") {
+                if (lowerInput.includes("hola") || lowerInput.includes("buenas")) {
+                    addMessage("¡Hola! ¿Cómo puedo ayudarte hoy? Puedes pedirme 'ofertas' o elegir una categoría.", 'bot');
+                    showCategoryOptions();
+                } else if (lowerInput.includes("ofertas") || lowerInput.includes("descuentos")) {
+                    addMessage("¡Perfecto! ¿En qué categoría de ofertas estás interesado?", 'bot');
+                    showCategoryOptions();
+                } else if (allOffers[lowerInput]) { // Si el usuario escribe directamente una categoría
+                    displayOffers(lowerInput);
+                }
+                else {
+                    addMessage("No entendí eso. Prueba diciendo 'ofertas' o elige una categoría de las opciones.", 'bot');
+                    setTimeout(showInitialOptions, 1000);
+                }
+            }
+        }
+
+        function showInitialOptions() {
+            clearQuickReplies();
+            addQuickReply("Ver ofertas", () => processUserInput("ofertas"));
+            addQuickReply("Ayuda", () => {
+                addMessage("Puedes escribir 'ofertas' para ver categorías, o directamente el nombre de una categoría como 'electronica', 'moda', 'hogar'.", 'bot');
+                setTimeout(showInitialOptions, 500);
+            });
+            conversationState = "inicio";
+        }
+
+        function showCategoryOptions() {
+            clearQuickReplies();
+            addMessage("Elige una categoría:", 'bot');
+            Object.keys(allOffers).forEach(category => {
+                addQuickReply(category.charAt(0).toUpperCase() + category.slice(1), () => displayOffers(category));
+            });
+            addQuickReply("Cancelar", showInitialOptions);
+            conversationState = "esperando_categoria"; // Cambiar estado si es necesario para lógica más compleja
+        }
+        
+        function addQuickReply(text, onClickAction) {
+            const button = document.createElement('button');
+            button.classList.add('quick-reply-btn');
+            button.textContent = text;
+            button.onclick = () => {
+                addMessage(text, 'user'); // Simular que el usuario escribió la opción
+                clearQuickReplies();
+                onClickAction();
+            };
+            quickRepliesContainer.appendChild(button);
+        }
+
+        function clearQuickReplies() {
+            quickRepliesContainer.innerHTML = '';
+        }
+
+
+        // Event Listeners
+        sendButton.addEventListener('click', () => {
+            const text = userInput.value;
+            if (text) processUserInput(text);
+        });
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const text = userInput.value;
+                if (text) processUserInput(text);
+            }
+        });
+
+        // Mensaje de bienvenida inicial
+        setTimeout(() => {
+            addMessage("¡Bienvenido al Asistente de Ofertas de AliExpress!", 'bot');
+            addMessage("Puedo ayudarte a encontrar descuentos. ¿Qué te gustaría buscar hoy?", 'bot');
+            showInitialOptions();
+        }, 500);
+
+    </script>
 </body>
 </html>
