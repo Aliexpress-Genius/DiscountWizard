@@ -3,22 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#123e32">
+  <meta name="theme-color" content="#1C2B3A">
   <meta name="description" content="اكتشف عروض الجزائر والكوبونات والمنتجات المختارة على DiscountWizard، مع التفاصيل والتصنيفات وروابط الشراء.">
   <title>عروض الجزائر والكوبونات | DiscountWizard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
       color-scheme: light;
-      --bg: #f8faf6;
-      --paper: #fff;
-      --ink: #153d32;
-      --muted: #67766e;
-      --line: #e0e8df;
-      --mint: #e5f2df;
-      --lime: #d6ed91;
-      --green: #245b44;
-      --radius: 24px;
+      --bg: #F5EFE0;
+      --paper: #FFFDF8;
+      --tray: #F0E8D4;
+      --ink: #1C2B3A;
+      --ink-soft: #33475C;
+      --muted: #7C7264;
+      --line: #E6DCC3;
+      --gold: #E2A33B;
+      --gold-deep: #B97A1E;
+      --flag: #D5482E;
+      --flag-soft: #FBE7E0;
+      --radius: 20px;
+      --font-display: 'Cairo', Tahoma, sans-serif;
+      --font-body: 'Tajawal', Tahoma, sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -27,45 +36,50 @@
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: Tahoma, Arial, sans-serif;
+      font-family: var(--font-body);
       line-height: 1.8;
     }
     button, input, select { font: inherit; }
     button, select { cursor: pointer; }
     a { color: inherit; text-decoration: none; }
     button, a, input, select { -webkit-tap-highlight-color: transparent; }
-    :focus-visible { outline: 3px solid #81ab49; outline-offset: 4px; }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
     [hidden] { display: none !important; }
     .wrap { width: min(1180px, calc(100% - 36px)); margin: auto; }
+
     .announcement {
-      padding: 8px 16px;
+      padding: 9px 16px;
       text-align: center;
       background: var(--ink);
-      color: white;
+      color: var(--gold);
       font-size: 12px;
+      font-weight: 500;
     }
+
     header { border-bottom: 1px solid var(--line); background: var(--paper); }
     .nav {
-      min-height: 88px;
+      min-height: 84px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
-    .brand { display: flex; align-items: center; gap: 10px; direction: ltr; }
+    .brand { display: flex; align-items: center; gap: 11px; }
     .brand-icon {
       display: grid;
       place-items: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
       background: var(--ink);
-      color: var(--lime);
-      font-size: 26px;
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 20px;
     }
-    .brand strong { display: block; font-size: 20px; letter-spacing: -.6px; }
-    .brand small { display: block; font-size: 9px; letter-spacing: 1.2px; color: var(--muted); }
+    .brand strong { font-family: var(--font-display); font-size: 19px; font-weight: 800; }
     .nav-links { display: flex; align-items: center; gap: 22px; font-size: 13px; }
+    .nav-links a:hover { color: var(--gold-deep); }
     .country-pill {
       border: 1px solid var(--line);
       border-radius: 100px;
@@ -73,80 +87,122 @@
       background: var(--bg);
       white-space: nowrap;
     }
+
+    /* ---------- Hero ---------- */
     .hero {
-      padding: 60px 0 42px;
+      padding: 56px 0 46px;
       display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 35px;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
       align-items: center;
     }
-    .eyebrow { font-size: 12px; font-weight: bold; color: var(--green); }
-    .eyebrow::before {
-      content: "";
+    .eyebrow { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--gold-deep); }
+    .eyebrow i {
       display: inline-block;
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #669840;
-      margin-inline-end: 9px;
+      background: var(--flag);
     }
-    h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.4; margin: 16px 0; letter-spacing: -1.5px; }
-    h1 span { color: #689144; }
-    .hero p { color: var(--muted); max-width: 620px; font-size: 15px; }
-    .hero-tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
-    .hero-tags span { padding: 5px 12px; border: 1px solid var(--line); border-radius: 100px; font-size: 11px; }
-    .hero-card {
-      padding: 30px;
-      border-radius: 32px;
-      background: var(--mint);
-      border: 1px solid #d4e4ca;
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(32px, 4.6vw, 52px);
+      line-height: 1.28;
+      margin: 14px 0;
+      letter-spacing: -.5px;
+    }
+    .hero p.lead { color: var(--muted); max-width: 560px; font-size: 15px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+    .hero-tags span {
+      padding: 6px 13px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 100px;
+      font-size: 11.5px;
+      color: var(--ink-soft);
+    }
+
+    /* Ticket-shaped hero card */
+    .ticket {
       position: relative;
-      overflow: hidden;
+      background: var(--ink);
+      color: #fff;
+      border-radius: 22px;
+      isolation: isolate;
     }
-    .hero-card::after {
-      content: "✳";
+    .ticket-top, .ticket-bottom { position: relative; padding: 26px 28px; }
+    .ticket-top { padding-bottom: 22px; }
+    .ticket-top small { color: var(--gold); font-weight: 700; font-size: 12px; }
+    .ticket-top h2 { font-family: var(--font-display); font-size: 24px; margin: 10px 0 8px; line-height: 1.5; }
+    .ticket-top p { font-size: 12.5px; color: #cfd6dd; margin: 0; }
+    .perforation {
+      height: 24px;
+      background-image: radial-gradient(circle at 12px 12px, var(--bg) 10px, transparent 10.5px);
+      background-size: 24px 24px;
+      background-repeat: repeat-x;
+      background-position: -4px center;
+    }
+    .ticket::before, .ticket::after {
+      content: "";
       position: absolute;
-      inset-inline-end: -8px;
-      top: -40px;
-      font-size: 155px;
-      color: #c6dda9;
-      line-height: 1;
+      width: 24px;
+      height: 24px;
+      background: var(--bg);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
     }
-    .hero-card > * { position: relative; z-index: 1; }
-    .hero-card small { color: var(--green); }
-    .hero-card h2 { font-size: 26px; margin: 14px 0 10px; }
-    .hero-card p { font-size: 13px; }
-    .hero-card a { display: inline-block; margin-top: 15px; font-size: 13px; font-weight: bold; }
-    .section-top { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
-    .section-top h2 { font-size: 24px; margin: 0; }
-    .section-top p { margin: 4px 0; font-size: 12px; color: var(--muted); }
+    .ticket::before { inset-inline-start: -12px; }
+    .ticket::after { inset-inline-end: -12px; }
+    .ticket-bottom { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 20px; }
+    .ticket-bottom a { font-size: 13px; font-weight: 700; color: var(--gold); }
+    .ticket-bottom .code {
+      font-size: 11px;
+      color: #9aa4ae;
+      border: 1px dashed #46586a;
+      border-radius: 8px;
+      padding: 4px 9px;
+    }
+
+    /* ---------- Offers section ---------- */
+    .section-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 15px; }
+    .section-top h2 { font-family: var(--font-display); font-size: 25px; margin: 0; font-weight: 800; }
+    .section-top p { margin: 4px 0 0; font-size: 12.5px; color: var(--muted); }
     .update-status { font-size: 11px; color: var(--muted); text-align: end; }
+
     .tools {
       display: grid;
-      grid-template-columns: 1fr 200px;
+      grid-template-columns: 1fr 190px;
       gap: 12px;
-      margin: 24px 0 18px;
+      margin: 26px 0 18px;
     }
     .search, .sort {
       width: 100%;
-      min-height: 50px;
+      min-height: 48px;
       border: 1px solid var(--line);
-      border-radius: 14px;
-      background: white;
+      border-radius: 13px;
+      background: var(--paper);
       color: var(--ink);
       padding: 11px 16px;
     }
-    .categories { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 25px; }
+    .search:focus, .sort:focus { border-color: var(--gold); }
+
+    .categories { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
     .category {
       border: 1px solid var(--line);
-      background: white;
-      color: var(--muted);
+      background: var(--paper);
+      color: var(--ink-soft);
       border-radius: 100px;
       padding: 8px 16px;
-      font-size: 12px;
+      font-size: 12.5px;
+      font-weight: 500;
     }
-    .category.active { background: var(--ink); color: white; border-color: var(--ink); }
+    .category.active { background: var(--ink); color: var(--gold); border-color: var(--ink); }
+
     .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+
     .offer {
       background: var(--paper);
       border: 1px solid var(--line);
@@ -154,33 +210,57 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform .2s, box-shadow .2s;
+      transition: transform .18s ease, box-shadow .18s ease;
     }
-    .offer:hover { transform: translateY(-4px); box-shadow: 0 15px 35px #183c3210; }
+    .offer:hover { transform: translateY(-4px); box-shadow: 0 16px 32px #1c2b3a14; }
+
     .offer-image {
       aspect-ratio: 4 / 3;
       position: relative;
-      background: #f0f3ed;
+      background: var(--tray);
       display: grid;
       place-items: center;
       overflow: hidden;
     }
-    .offer-image img { width: 100%; height: 100%; object-fit: contain; padding: 18px; }
-    .placeholder { color: #98ac93; font-size: 45px; }
+    .offer-image img { width: 100%; height: 100%; object-fit: contain; padding: 20px; }
+    .placeholder { color: #c2b48a; font-size: 42px; font-family: var(--font-display); }
+
+    /* Badge styled as a hanging price tag with a punched hole */
     .badge {
       position: absolute;
-      top: 13px;
-      inset-inline-start: 13px;
-      padding: 4px 11px;
-      border-radius: 100px;
-      background: var(--ink);
-      color: white;
+      top: 14px;
+      inset-inline-start: -6px;
+      padding: 6px 14px 6px 20px;
+      background: var(--flag);
+      color: #fff;
       font-size: 11px;
+      font-weight: 700;
+      border-radius: 0 100px 100px 0;
+      box-shadow: 0 3px 8px #00000022;
     }
-    .badge.expired { background: #756e63; }
+    .badge::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--tray);
+    }
+    .badge.expired { background: var(--ink-soft); }
+
     .offer-content { padding: 20px; display: flex; flex-direction: column; flex: 1; }
-    .meta { display: flex; justify-content: space-between; gap: 8px; color: var(--muted); font-size: 10px; }
-    .offer h3 { font-size: 16px; line-height: 1.8; margin: 12px 0 8px; overflow-wrap: anywhere; }
+    .meta { display: flex; justify-content: space-between; gap: 8px; color: var(--muted); font-size: 10.5px; }
+    .offer h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15.5px;
+      line-height: 1.7;
+      margin: 12px 0 8px;
+      overflow-wrap: anywhere;
+    }
     .summary {
       color: var(--muted);
       font-size: 12px;
@@ -190,89 +270,114 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    .prices { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: auto; }
-    .price { font-size: 22px; font-weight: bold; }
-    .old-price { color: #8a938b; font-size: 12px; }
-    .coupon-line { color: var(--green); font-size: 11px; margin: 10px 0 0; overflow-wrap: anywhere; }
+    .prices { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin-top: auto; }
+    .price { font-family: var(--font-display); font-size: 21px; font-weight: 800; color: var(--gold-deep); }
+    .old-price { color: #a89e8c; font-size: 12px; }
+    .coupon-line {
+      color: var(--ink-soft);
+      font-size: 11.5px;
+      margin: 12px 0 0;
+      padding: 6px 10px;
+      border: 1px dashed var(--line);
+      border-radius: 9px;
+      background: var(--bg);
+      width: fit-content;
+      overflow-wrap: anywhere;
+    }
+
     .details-button, .primary {
       border: 0;
       background: var(--ink);
-      color: white;
+      color: #fff;
       border-radius: 12px;
-      padding: 11px 16px;
+      padding: 12px 16px;
       text-align: center;
-      font-weight: bold;
-      font-size: 12px;
+      font-weight: 700;
+      font-size: 12.5px;
     }
     .details-button { width: 100%; margin-top: 18px; }
-    .details-button:hover, .primary:hover { background: var(--green); }
+    .details-button:hover, .primary:hover { background: var(--gold-deep); }
+
     .empty {
-      border: 1px dashed #cbd7c5;
+      border: 1px dashed #d8cba4;
       border-radius: var(--radius);
       text-align: center;
       padding: 65px 20px;
-      background: white;
+      background: var(--paper);
     }
-    .empty .symbol { font-size: 40px; color: #87a36c; }
-    .empty h3 { margin: 12px 0; font-size: 19px; }
+    .empty .symbol { font-size: 34px; color: var(--gold); font-family: var(--font-display); font-weight: 800; }
+    .empty h3 { margin: 12px 0; font-family: var(--font-display); font-size: 19px; }
     .empty p { margin: 0 auto; max-width: 550px; color: var(--muted); font-size: 13px; }
-    .secondary { border: 1px solid var(--line); background: white; padding: 9px 18px; border-radius: 12px; color: var(--ink); }
+    .secondary { border: 1px solid var(--line); background: var(--paper); padding: 9px 18px; border-radius: 12px; color: var(--ink); font-weight: 500; }
+    .secondary:hover { border-color: var(--gold); }
     .empty button { margin-top: 20px; }
+
     .pagination { display: flex; align-items: center; justify-content: center; gap: 18px; margin: 30px 0; }
     .pagination span { font-size: 12px; color: var(--muted); }
     button:disabled { opacity: .4; cursor: not-allowed; }
-    .notice { padding: 23px; background: var(--mint); border-radius: 18px; margin: 40px 0; font-size: 12px; }
-    footer { margin-top: 40px; border-top: 1px solid var(--line); padding: 25px 0; color: var(--muted); font-size: 11px; }
+
+    .notice {
+      padding: 22px 24px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      margin: 44px 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    footer { margin-top: 40px; border-top: 1px solid var(--line); padding: 25px 0; color: var(--muted); font-size: 11.5px; }
     .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 
+    /* ---------- Dialog ---------- */
     dialog {
       width: min(760px, calc(100% - 24px));
       max-height: 90vh;
       padding: 0;
       border: 1px solid var(--line);
-      border-radius: 24px;
+      border-radius: 22px;
       color: var(--ink);
-      background: white;
+      background: var(--paper);
       overflow: auto;
     }
-    dialog::backdrop { background: #09251fcc; backdrop-filter: blur(4px); }
+    dialog::backdrop { background: #1c2b3acc; backdrop-filter: blur(4px); }
     .dialog-head {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 22px;
       border-bottom: 1px solid var(--line);
+      font-weight: 700;
     }
-    .close { border: 0; background: var(--bg); width: 36px; height: 36px; border-radius: 50%; font-size: 22px; color: var(--ink); }
+    .close { border: 0; background: var(--bg); width: 36px; height: 36px; border-radius: 50%; font-size: 20px; color: var(--ink); }
     .dialog-body { padding: 25px; }
-    .detail-image { width: 100%; max-height: 300px; object-fit: contain; background: var(--bg); border-radius: 18px; padding: 20px; }
-    .dialog-body h2 { font-size: 23px; line-height: 1.6; overflow-wrap: anywhere; }
+    .detail-image { width: 100%; max-height: 300px; object-fit: contain; background: var(--tray); border-radius: 16px; padding: 20px; }
+    .dialog-body h2 { font-family: var(--font-display); font-size: 22px; line-height: 1.6; overflow-wrap: anywhere; font-weight: 800; }
     .description { white-space: pre-line; color: var(--muted); font-size: 14px; overflow-wrap: anywhere; }
     .specs { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
     .specs th, .specs td { padding: 12px; border-bottom: 1px solid var(--line); text-align: start; overflow-wrap: anywhere; }
-    .specs th { width: 35%; background: var(--bg); }
+    .specs th { width: 35%; background: var(--bg); font-weight: 700; }
     .detail-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
     .detail-note { color: var(--muted); font-size: 11px; margin-top: 18px; }
-    .skip { position: absolute; top: -100px; padding: 10px; background: white; z-index: 5; }
+    .skip { position: absolute; top: -100px; padding: 10px; background: var(--paper); z-index: 5; }
     .skip:focus { top: 10px; }
 
     @media (max-width: 900px) {
       .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .hero { grid-template-columns: 1fr; gap: 15px; padding-top: 35px; }
-      .hero-card { padding: 25px; }
+      .hero { grid-template-columns: 1fr; gap: 26px; padding-top: 35px; }
     }
     @media (max-width: 580px) {
       .wrap { width: calc(100% - 26px); }
-      .nav { min-height: 76px; gap: 10px; flex-wrap: wrap; padding: 14px 0; }
-      .brand strong { font-size: 18px; }
+      .nav { min-height: 74px; gap: 10px; flex-wrap: wrap; padding: 14px 0; }
+      .brand strong { font-size: 17px; }
       .nav-links { gap: 12px; font-size: 11px; }
       .nav-links .home-link { display: none; }
       .grid { grid-template-columns: 1fr; }
       .tools { grid-template-columns: 1fr; }
-      .section-top { align-items: flex-start; }
+      .section-top { align-items: flex-start; flex-direction: column; }
       .section-top h2 { font-size: 21px; }
-      .update-status { max-width: 130px; }
-      .hero h1 { font-size: 36px; }
+      .update-status { text-align: start; }
+      h1 { font-size: 32px; }
       .dialog-body { padding: 18px; }
       .categories { gap: 6px; }
       .category { padding: 7px 12px; }
@@ -294,11 +399,8 @@
   <header>
     <nav class="wrap nav" aria-label="القائمة الرئيسية">
       <a class="brand" href="../?lang=ar" aria-label="DiscountWizard — الرئيسية">
-        <span class="brand-icon" aria-hidden="true">✳</span>
-        <span>
-          <strong>DiscountWizard</strong>
-          <small>THE ART OF FINDING MORE</small>
-        </span>
+        <span class="brand-icon" aria-hidden="true">DW</span>
+        <strong>DiscountWizard</strong>
       </a>
 
       <div class="nav-links">
@@ -313,9 +415,9 @@
   <main class="wrap">
     <section class="hero">
       <div>
-        <div class="eyebrow">اكتشافات تستحق • السوق الجزائري</div>
-        <h1>عروض تستحق.<br><span>وتسوّق أذكى.</span></h1>
-        <p>
+        <div class="eyebrow"><i></i>اكتشافات تستحق، مختارة لسوق الجزائر</div>
+        <h1>عروض حقيقية، تُقرأ بسهولة، وتُختار قبل التسوّق أذكى.</h1>
+        <p class="lead">
           عروض وكوبونات ومنتجات مختارة للجزائر.
           اكتشف ما يناسبك، اقرأ التفاصيل، ثم انتقل للمتجر عندما تقرر الشراء.
         </p>
@@ -326,12 +428,18 @@
         </div>
       </div>
 
-      <aside class="hero-card">
-        <small>اكتشف أكثر، ادفع أقل</small>
-        <h2>عرضك القادم<br>قد يكون هنا.</h2>
-        <p>تابع جديد المنتجات والكوبونات في مكان واحد، دون الحاجة إلى البحث داخل رسائل القنوات.</p>
-        <a href="#offers">استكشف أحدث العروض ←</a>
-      </aside>
+      <div class="ticket">
+        <div class="ticket-top">
+          <small>اكتشف أكثر، ادفع أقل</small>
+          <h2>عرضك القادم قد يكون هنا</h2>
+          <p>تابع جديد المنتجات والكوبونات في مكان واحد، دون الحاجة إلى البحث داخل رسائل القنوات.</p>
+        </div>
+        <div class="perforation"></div>
+        <div class="ticket-bottom">
+          <a href="#offers">استكشف أحدث العروض</a>
+          <span class="code">DZ · تحديث كل دقيقتين</span>
+        </div>
+      </div>
     </section>
 
     <section id="offers" aria-labelledby="offers-title">
@@ -364,7 +472,7 @@
       <div class="grid" id="offer-grid"></div>
 
       <div class="empty" id="empty-state" hidden>
-        <div class="symbol" aria-hidden="true">✳</div>
+        <div class="symbol" aria-hidden="true">DW</div>
         <h3 id="empty-title">العروض في الطريق</h3>
         <p id="empty-text"></p>
         <button class="secondary" id="retry" type="button">إعادة التحقق</button>
@@ -388,7 +496,7 @@
     <div class="wrap footer-inner">
       <span>© <span id="year"></span> DiscountWizard</span>
       <span>عروض الجزائر — جزء من DiscountWizard</span>
-      <a href="../?lang=ar">العودة إلى الصفحة الرئيسية ←</a>
+      <a href="../?lang=ar">العودة إلى الصفحة الرئيسية</a>
     </div>
   </footer>
 
@@ -443,20 +551,19 @@
       function safeUrl(value) {
         if (typeof value !== 'string' || !value.trim()) return '';
         try {
-          const url = new URL(value, DATA_URL);
-          return ['https:', 'http:'].includes(url.protocol) ? url.href : '';
+          const url = new URL(value, location.href);
+          return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
         } catch {
           return '';
         }
       }
 
-      function string(value, limit = 10000) {
-        return typeof value === 'string' ? value.slice(0, limit) : '';
+      function string(value, max = 4000) {
+        return typeof value === 'string' ? value.slice(0, max).trim() : '';
       }
 
       function numeric(value) {
-        if (value === null || value === undefined || value === '') return null;
-        const number = Number(value);
+        const number = typeof value === 'string' ? Number(value.replace(/[^\d.-]/g, '')) : Number(value);
         return Number.isFinite(number) && number >= 0 ? number : null;
       }
 
@@ -555,7 +662,7 @@
 
       function appendImage(parent, offer, detail = false) {
         if (!offer.image) {
-          if (!detail) parent.append(element('span', 'placeholder', '✳'));
+          if (!detail) parent.append(element('span', 'placeholder', 'DW'));
           return;
         }
 
@@ -567,7 +674,7 @@
         img.referrerPolicy = 'no-referrer';
         img.addEventListener('error', () => {
           img.remove();
-          if (!detail) parent.append(element('span', 'placeholder', '✳'));
+          if (!detail) parent.append(element('span', 'placeholder', 'DW'));
         }, { once: true });
 
         parent.append(img);
@@ -648,7 +755,7 @@
           body.append(element('p', 'coupon-line', `كود الكوبون: ${offer.coupon}`));
         }
 
-        const button = element('button', 'details-button', 'التفاصيل والعرض ←');
+        const button = element('button', 'details-button', 'عرض التفاصيل');
         button.type = 'button';
         button.addEventListener('click', () => openDetails(offer));
         body.append(button);
